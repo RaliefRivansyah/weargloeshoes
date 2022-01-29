@@ -8,7 +8,6 @@
         font-family: 'Roboto-Light', sans-serif;
     }
 
-
     .product-title {
         color: white;
     }
@@ -20,7 +19,6 @@
     .card-text {
         color: white;
     }
-
 
     .single-item {
         display: inline-block;
@@ -62,8 +60,6 @@
         transform: translateY(5px);
     }
 
-
-
     .img-container {
         position: relative;
         overflow: hidden;
@@ -87,9 +83,6 @@
         transform: scale(1.1);
     }
 
-
-
-
     .overlay {
         display: block;
         opacity: 0;
@@ -100,7 +93,6 @@
         margin-left: 0;
         width: 30%;
     }
-
 
     .product-top {
         display: flex;
@@ -164,7 +156,7 @@
 
         <div class="row">
             <div class="col-10 mx-auto col-sm-6 text-center">
-                <h1 class="text-capitalize product-title">
+                <h1 class="text-capitalize product-title mb-4">
                     New Arrivals
                 </h1>
             </div>
@@ -172,11 +164,10 @@
 
         <div class="row container">
             @foreach ($products as $p)
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6 col-12">
                 <div class="product-top mb-5 mt-3">
                     <div class="card single-item">
                         <a href="/detailproduct/{{$p->id}}">
-                        
                             <div class="img-container">
                                 <img src="{{asset('/images/product/imageproduct/'.$p->product_image) }}" alt="" class="card-img-top product-img" />
                             </div>
@@ -209,7 +200,6 @@
                                 @endif
                             </div>
                         </div>
-
                         {{-- <div class="product-bottom ml-3">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -221,18 +211,13 @@
                 </div>
             </div>
             @endforeach
-
         </div>
         {{-- {{ $products ->links() }} --}}
-
     </div>
-
 </section>
-
 {{-- <script>
     function showAlert() {
         alert('Item add to shopping cart');
     }
 </script> --}}
-
 @endSection

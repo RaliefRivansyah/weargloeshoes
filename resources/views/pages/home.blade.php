@@ -63,10 +63,12 @@
   #new-arrival .container {
     margin: 40px auto 100px;
   }
+  
   #new-arrival .display-6 {
     text-align: center;
     font-size: 25px;
   }
+  
   #new-arrival .container-card {
     padding-top: 50px;
     margin: 0px -80px;
@@ -297,7 +299,7 @@
     font-size: 20px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768.98px) {
 	#about-us .container p {
 		/* text-align: justify; */
 		margin: 0px 254px 80px!important;
@@ -305,14 +307,13 @@
 	}
   }
 
-  @media (min-width: 567px) and (max-width: 767.98px){
+  @media (min-width: 576px) and (max-width: 768px){
 	#about-us .container p {
 		/* text-align: justify; */
 		font-size: 18px;
 	}
   }
 </style>
-
 <style>
   #article .container-feed{
     margin-top: 80px;
@@ -404,7 +405,6 @@
     transform: translateX(-50%);
   }
 </style>
-
 <section id="home">
 	<section id="swiper">
 		<div class="swiper-container mySwiper">
@@ -461,7 +461,7 @@
 		</script>
 	
 	</section>
-	
+
 	<section id="about-us">
 		<div class="container">
 			<h1 class="judul">ABOUT US</h1>
@@ -471,98 +471,100 @@
 	
 	<section id="new-arrival">
 		<div class="container">
-			<h3 class="display-6">New Arrivals</h3>
-		<div class="row container-card">
-			@foreach ($new_arrivals as $new_arrival)
-			<div class="col-md-3">
-				<div class="new-arr-content" style="width: 18rem;">
-				<a href="/detailproduct/{{$new_arrival->id}}">
-					<div class="card">
-					<img src="{{asset('/images/product/imageproduct/'.$new_arrival->product_image) }}" class=" fade-1" alt="...">
-					{{-- <img src="{{asset('/images/image5.jpg') }}" class="card-img-top fade-2" alt="..."> --}}
-					</div>
-				</a>
-				<div class="new-arr-content-desc">
-					<a href="/detailproduct/{{$new_arrival->id}}" style="text-decoration: none; color: black">
-					<p class="jdl" >{{$new_arrival->product_name}} | {{$new_arrival->colour}}</p>
-					</a>
-					{{-- Rp. {{ number_format($p->price, 0) }} --}}
-					{{-- <p class="price">Rp. {{ number_format($new_arrival->price, 0, ',', '.') }}</p>
-					<p class="price" style="color:red">Rp. 300.000</p>
-					<p class="price">({{$new_arrival->discount}}% Off)</p> --}}
+			<div class="row">
+				<div class="col-10 mx-auto col-sm-6 text-center">
+					<h1 class="text-capitalize display-6 mb-5">
+						New Arrivals
+					</h1>
 				</div>
-				</div>
-				{{-- <div class="product-top mb-5 mt-3">
-					<div class="card single-item">
+			</div>
+			{{-- <h3 class="display-6">New Arrivals</h3> --}}
+			<div class="row">
+				@foreach ($new_arrivals as $new_arrival)
+				<div class="col-xl-3 col-lg-4 col-sm-6 col-12 d-flex justify-content-center align-items-center">
+					<div class="new-arr-content" style="width: 18rem;">
 						<a href="/detailproduct/{{$new_arrival->id}}">
-							<div class="img-container">
-								<img src="{{asset('/images/'.$new_arrival->product_image) }}" alt="" class="card-img-top product-img" />
+							<div class="card">
+								<img src="{{asset('/images/product/imageproduct/'.$new_arrival->product_image) }}" class=" fade-1" alt="...">
+								{{-- <img src="{{asset('/images/image5.jpg') }}" class="card-img-top fade-2" alt="..."> --}}
 							</div>
 						</a>
-						<div class="overlay-left">
-							<button type="button" class="btn btn-secondary" title="Quick Shop" data-toggle="modal" data-target="#previewimage{{$new_arrival->id}}"><i class="fa fa-eye" ></i></button>
+						<div class="new-arr-content-desc">
+							<a href="/detailproduct/{{$new_arrival->id}}" style="text-decoration: none; color: black">
+								<p class="jdl" >{{$new_arrival->product_name}} | {{$new_arrival->colour}}</p>
+							</a>
+							{{-- Rp. {{ number_format($p->price, 0) }} --}}
+							{{-- <p class="price">Rp. {{ number_format($new_arrival->price, 0, ',', '.') }}</p>
+							<p class="price" style="color:red">Rp. 300.000</p>
+							<p class="price">({{$new_arrival->discount}}% Off)</p> --}}
 						</div>
-						<div class="overlay-right d-flex justify-content-end">
-							@if ($orders->where("user_name", session('user'))->where('product_id',($new_arrival->id))->isEmpty())
-								<a  href="/wishlist/{{$new_arrival->id}}/{{$new_arrival->product_image}}">       
-									<button onclick="showAlertAddWishlist()" type="button" class="btn btn-secondary " title="Quick Shop">
-										<i class="fa fa-heart-o"></i>
+					</div>
+					{{-- <div class="product-top mb-5 mt-3">
+						<div class="card single-item">
+							<a href="/detailproduct/{{$new_arrival->id}}">
+								<div class="img-container">
+									<img src="{{asset('/images/'.$new_arrival->product_image) }}" alt="" class="card-img-top product-img" />
+								</div>
+							</a>
+							<div class="overlay-left">
+								<button type="button" class="btn btn-secondary" title="Quick Shop" data-toggle="modal" data-target="#previewimage{{$new_arrival->id}}"><i class="fa fa-eye" ></i></button>
+							</div>
+							<div class="overlay-right d-flex justify-content-end">
+								@if ($orders->where("user_name", session('user'))->where('product_id',($new_arrival->id))->isEmpty())
+									<a  href="/wishlist/{{$new_arrival->id}}/{{$new_arrival->product_image}}">       
+										<button onclick="showAlertAddWishlist()" type="button" class="btn btn-secondary " title="Quick Shop">
+											<i class="fa fa-heart-o"></i>
+										</button>
+									</a>
+								@else
+								<a  href="/wishlist/delete/{{$new_arrival->id}}">     
+									<button onclick="showAlertDeleteWishlist()" type="button" class="btn btn-secondary " title="Quick Shop">
+											<i class="fa fa-heart"></i> 
 									</button>
 								</a>
-							@else
-							<a  href="/wishlist/delete/{{$new_arrival->id}}">     
-								<button onclick="showAlertDeleteWishlist()" type="button" class="btn btn-secondary " title="Quick Shop">
-										<i class="fa fa-heart"></i> 
-								</button>
-							</a>
-							@endif
-						</div>
-						<a href="/detailproduct/{{$new_arrival->id}}">
-							<div class="card-body">
-								<div class="card-text d-flex justify-content-between text-capitalize">
-									<h5 id="item-name">{{$new_arrival->product_name}} - ID : {{$new_arrival->id}}</h5>
-									<span><i class="fas fa-dollar-sign">5</i></span>
+								@endif
+							</div>
+							<a href="/detailproduct/{{$new_arrival->id}}">
+								<div class="card-body">
+									<div class="card-text d-flex justify-content-between text-capitalize">
+										<h5 id="item-name">{{$new_arrival->product_name}} - ID : {{$new_arrival->id}}</h5>
+										<span><i class="fas fa-dollar-sign">5</i></span>
+									</div>
 								</div>
-							</div>
-	
-							<div class="product-bottom ml-3">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fas fa-star-half"></i>
-							</div>
-						</a>
-					</div>
-				</div> --}}
-			</div>
-			@endforeach
-		</div>
-		<a href="/new_arrival" style="text-decoration: none; color: black">
 		
-			<button type="button" class="view-all-product button-animate"> <span> View all products </span> </button>
-		</a>
-		<div class="row container-card">
-		@foreach ($ktgr as $item)
-
-		{{-- <div class="row">
-			<div class="col kotak kotak1">
-			<img src="{{asset('/images/post/'.$item->image) }}" class="card-img card-ktgr img-fluid" alt="...">
-			{{-- <img src="./images/amy-shamblen-Vq1sd62o0us-unsplash.jpg" alt="" /> --}}
-			
-
-		<div class="col-md-4">
-			<div class="card bg-dark text-white">
-			<img src="{{asset('/images/post/'.$item->image) }}" class="card-img card-ktgr img-fluid" alt="...">
-			<div class="card-img-overlay">
-				<h3 class="card-title">{{$item->post_title}}</h3>
-				<a type="button" href='/shoes/{{$item->post_title}}' style="text-decoration: none; color: black;" class="button-animate"> <span> View all products </span> </a>
+								<div class="product-bottom ml-3">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fas fa-star-half"></i>
+								</div>
+							</a>
+						</div>
+					</div> --}}
+				</div>
+				@endforeach
 			</div>
+			<a href="/new_arrival" style="text-decoration: none; color: black">
+				<button type="button" class="view-all-product button-animate"> <span> View all products </span> </button>
+			</a>
+			<div class="rocontainer-card">
+				@foreach ($ktgr as $item)
+				{{-- <div class="row">
+				<div class="col kotak kotak1">
+				<img src="{{asset('/images/post/'.$item->image) }}" class="card-img card-ktgr img-fluid" alt="...">
+				{{-- <img src="./images/amy-shamblen-Vq1sd62o0us-unsplash.jpg" alt="" /> --}}
+				<div class="col-md-4">
+					<div class="card bg-dark text-white">
+						<img src="{{asset('/images/post/'.$item->image) }}" class="card-img card-ktgr img-fluid" alt="...">
+						<div class="card-img-overlay">
+							<h3 class="card-title">{{$item->post_title}}</h3>
+							<a type="button" href='/shoes/{{$item->post_title}}' style="text-decoration: none; color: black;" class="button-animate"> <span> View all products </span> </a>
+						</div>
+					</div>
+				</div>
+				@endforeach
 			</div>
-		</div>
-		@endforeach
-		</div>
-	
 		</div>
 	</section>
 	

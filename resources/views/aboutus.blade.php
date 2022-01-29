@@ -14,7 +14,7 @@
         font-size: 23px;
     }
 
-	@media (min-width: 768px) {
+	@media (min-width: 768.98px) {
 		.aboutus p {
 			/* text-align: justify; */
 			margin: 0px 254px 80px!important;
@@ -22,7 +22,7 @@
 		}
 	}
 
-	@media (min-width: 567px) and (max-width: 767.98px){
+	@media (min-width: 576px) and (max-width: 768px){
 		.aboutus p {
 			font-size: 18px;
 		}
