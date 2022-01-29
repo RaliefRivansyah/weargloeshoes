@@ -190,6 +190,7 @@
     position: absolute;
     transition: 0.3s;
   }
+
   #feed .black-hover:hover{
     opacity: 0.4; 
   }
@@ -200,12 +201,31 @@
     border: 8px solid white;
     background-color: #BFBEBE;
   }
-  #product .image{
+
+  /* #product .image{
     margin-left: 100px;
   }
+
   #product .image img{
     width: 450px;
+  } */
+
+  #product .image{
+    width: 450px;
   }
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+	#product .image{
+		width: 550px;
+	}
+  }
+
+  @media (max-width: 767.98px) {
+	#product .image{
+		width: 400px;
+	}
+  }
+
   #product .display-6 {
     text-align: center;
     font-weight: 400;
@@ -563,99 +583,101 @@
 		<div class="container">
 			<h3 class="display-6 my-5">FEATURED PRODUCT</h3>
 			<div class="row mb-5">
-				<div class="col-md-5 col-sm-12">  
+				<div class="col-lg-6 col-12">  
 					<a href="/detailproduct/{{$featured->id}}">
-						<div class="image">
-							<img src="{{asset('/images/product/imageproduct/'.$featured->product_image) }}" alt="">
+						<div class="d-flex justify-content-center align-items-center">
+							<img src="{{asset('/images/product/imageproduct/'.$featured->product_image) }}" alt="" class="image">
 						</div>
 					</a>
 				</div>
-				<div class="product__description col-md-5 offset-md-1 col-sm-12">
-					<h1 class="py-2">{{$featured->product_name}}</h1>
-					<h2 class="py-2">{{$featured->colour}}</h2>
-					{{-- <h3 class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3> --}}
-					{{-- <h3 class="py-2" style="color:red">Rp. 300.000</h3> --}}
-					{{-- <h2 class="py-2">({{$featured->discount}}% Off)</h2> --}}
+				<div class="product__description col-lg-6 col-12">
+					<div class="px-5 px-lg-0 mt-4 mt-md-5 mt-lg-0">
+						<h1 class="py-2">{{$featured->product_name}}</h1>
+						<h2 class="py-2">{{$featured->colour}}</h2>
+						{{-- <h3 class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3> --}}
+						{{-- <h3 class="py-2" style="color:red">Rp. 300.000</h3> --}}
+						{{-- <h2 class="py-2">({{$featured->discount}}% Off)</h2> --}}
 
-					@if($featured->discount== null)
-					<h3 id="price" class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
-					@else
-					<h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
-					<h3 id="afterprice" class="py-2">Rp. {{number_format($featured->price-($featured->price*($featured->discount/100)), 0, ',', '.')}}</h3>
-					<h2 class="py-2">({{$featured->discount}}% Off)</h2>
-					@endif
+						@if($featured->discount == null)
+						<h3 id="price" class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
+						@else
+						<h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
+						<h3 id="afterprice" class="py-2">Rp. {{number_format($featured->price-($featured->price*($featured->discount/100)), 0, ',', '.')}}</h3>
+						<h2 class="py-2">({{$featured->discount}}% Off)</h2>
+						@endif
 
-					{{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
-					{{-- @foreach ($featureds as $item)
-					<a href="/detailproduct/{{$item->id}}">
-					
-					<img src="{{asset('/images/'.$item->product_image) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
-					</a>
-					
-					@endforeach --}}
-					{{-- <div class="row product__size">
-						<div class="col-6">
-							<p>Size: </p>
-						</div>
-						<div class="col-6 product__size-chart">
-							<a href="#"><p>Size chart</p></a>
-						</div>
-			
-						<div class="product__size--table">
-							<h1>36</h1>
-							<h1>37</h1>
-							<h1>38</h1>
-							<h1>39</h1>
-							<h1>40</h1>
-						</div>
-					</div> --}}
-
-					<div class="row product__size">
-						{{-- <div class="col-6">
-							<p>Size: </p>
+						{{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
+						{{-- @foreach ($featureds as $item)
+						<a href="/detailproduct/{{$item->id}}">
+						
+						<img src="{{asset('/images/'.$item->product_image) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
+						</a>
+						
+						@endforeach --}}
+						{{-- <div class="row product__size">
+							<div class="col-6">
+								<p>Size: </p>
+							</div>
+							<div class="col-6 product__size-chart">
+								<a href="#"><p>Size chart</p></a>
+							</div>
+				
+							<div class="product__size--table">
+								<h1>36</h1>
+								<h1>37</h1>
+								<h1>38</h1>
+								<h1>39</h1>
+								<h1>40</h1>
+							</div>
 						</div> --}}
 
-						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-							Size chart
-						</button>
-						{{-- <div class="col-6 product__size-chart">
-							<a href="#"><p>Size chart</p></a>
-						</div> --}}
+						<div class="row product__size">
+							{{-- <div class="col-6">
+								<p>Size: </p>
+							</div> --}}
 
-						<!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div class="modal-dialog modal-xl">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Size chart</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<img src="{{asset('/images/detailproduct/size cart.jpeg') }}" style="width: 850px" alt="">
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-									{{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+								Size chart
+							</button>
+							{{-- <div class="col-6 product__size-chart">
+								<a href="#"><p>Size chart</p></a>
+							</div> --}}
+
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-xl">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Size chart</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<img src="{{asset('/images/detailproduct/size cart.jpeg') }}" style="width: 850px" alt="">
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										{{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						{{-- <div class="product__size--table">
-							<h1>36</h1>
-							<h1>37</h1>
-							<h1>38</h1>
-							<h1>39</h1>
-							<h1>40</h1>
+							{{-- <div class="product__size--table">
+								<h1>36</h1>
+								<h1>37</h1>
+								<h1>38</h1>
+								<h1>39</h1>
+								<h1>40</h1>
+							</div> --}}
+						</div>
+				
+						{{-- <div class="product__button">
+							<button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
+							<button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
 						</div> --}}
+						<a href="/detailproduct/{{$featured->id}}" style="color: black">View product details</a>
 					</div>
-			
-					{{-- <div class="product__button">
-						<button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
-						<button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
-					</div> --}}
-					<a href="/detailproduct/{{$featured->id}}" style="color: black">View product details</a>
 				</div> 
 			</div>
 		</div>
