@@ -3,7 +3,6 @@
 @section('content')
 
 <style>
-
     body{
         background-color: #bfbebe;
         font-family: 'Roboto-Light', sans-serif;
@@ -62,7 +61,6 @@
     <div class="custom-rules mt-5">
         <h6>Note!</h6>
         @foreach ($customnotes as $item1)
-            
         <ul>
             {{-- <li>* Hit download button below to get shoes template</li>
             <li>* After designing your shoes, click upload button</li> --}}
@@ -74,9 +72,8 @@
 
 <div class="container custom mt-5 d-flex justify-content-between overflow-auto">
     @foreach ($customtestimonys as $item1)
-        
-    <div class="col-md-4 ">
-        <div class="custom-catalogue ">
+    <div class="mx-3">
+        <div class="custom-catalogue">
             <img src="{{asset('/images/custom/customtestimony/'.$item1->image_testimony) }}" alt="..." width="300" height="300">
             {{-- <a href="" class="d-flex justify-content-center">
                 <button type="button" class="btn btn-dark mt-3 mb-4">Download Template</button>
@@ -118,7 +115,7 @@
     </form>
 </div> --}}
 
-<div class="container contact-custom d-flex justify-content-center">
+<div class="container contact-custom d-flex justify-content-center mt-4">
     <p>Contact us</p>
     <a href="https://api.whatsapp.com/send?phone=62{{$akunperusahaan->link_whatsapp}}">
         <img src="../images/whatsapp.png" alt="" width="40" height="40">
