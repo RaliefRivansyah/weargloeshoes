@@ -83,10 +83,12 @@
   #new-arrival .new-arr-content-desc{
     margin-top: 17px;
   }
+
   #new-arrival .new-arr-content-desc p.jdl{
     text-align: center;
     font-size: 17px;
   }
+
   #new-arrival .new-arr-content-desc p.price{
     text-align: center;
     font-size: 15px;
@@ -94,6 +96,7 @@
     font-weight: 500;
     color: #c0b6a7;
   }
+
   #new-arrival .button-animate, footer button{
       border: 1px solid white;
       position: relative;
@@ -163,23 +166,28 @@
     padding-bottom: 80px;
     margin-bottom: -80px;
   }
+
   #feed .display-6{
     text-align: center;
     font-size: 25px;
   }
+
   #feed .image img{
     margin-top: 10px;
     width: 24.5vw;
     height: 24.5vw;
   }
+
   #feed .col-feed{
     padding: 0px;
   }
+
   #feed .image{
     padding: 0px;
     width: 24.5vw;
     height: 24.5vw;
   }
+
   #feed .black-hover{
     margin-top: 10px;
     background-color: black;
@@ -370,6 +378,7 @@
     position: absolute;
     transition: 0.3s;
   }
+
   #article .black-hover:hover{
     opacity: 0.4; 
   }
@@ -383,6 +392,7 @@
   #article .article-content-desc{
     margin-top: 17px;
   }
+
   #article .article-content-desc p.jdl{
     text-align: center;
     font-size: 17px;
@@ -684,107 +694,105 @@
 	</section>
 
 	<section id="article">
-		<div class="container-article container-fluid">
-		<h3 class="display-6">ARTICLE</h3>
-		<div class="row mt-5">
-			@foreach ($articles as $article1)
-			<div class="article-content" style="width: 20rem;">
-			<div class="col-3 col-article">
-				<a href="/pages/article/detailarticle/{{$article1->id}}">
-				<div class="image">
-					<img src="{{asset('/images/article/'.$article1->image_article) }}" class="img-thumbnail mb-3" alt="...">     
+		<div class="container-article container">
+			<h3 class="display-6">ARTICLE</h3>
+			<div class="row mt-5">
+				@foreach ($articles as $article1)
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="">
+						<a href="/pages/article/detailarticle/{{$article1->id}}">
+							<div class="image w-100">
+								<img src="{{asset('/images/article/'.$article1->image_article) }}" class="img-thumbnail mb-3" alt="...">     
+							</div>
+						</a>
+					</div>
+					<div class="article-content-desc">
+						<a href="/pages/article/detailarticle/{{$article1->id}}" style="text-decoration: none; color: black">
+							<p class="jdl" >{{$article1->title}}</p>
+						</a>
+					</div>
 				</div>
+				@endforeach
+				<a href="/pages/article/article" style="text-decoration: none; color: black">
+					<button type="button" class="view-all-article button-animate"> <span> View all articles </span> </button>
 				</a>
 			</div>
-			<div class="article-content-desc">
-				<a href="/pages/article/detailarticle/{{$article1->id}}" style="text-decoration: none; color: black">
-				<p class="jdl" >{{$article1->title}}</p>
-				</a>
-			</div>
-			</div>
-			@endforeach
-			<a href="/pages/article/article" style="text-decoration: none; color: black">
-			<button type="button" class="view-all-article button-animate"> <span> View all articles </span> </button>
-			</a>
-		</div>
 		</div>
 	</section>
 	
 	<section id="feed">
 		<div class="container-feed container-fluid">
-		<h3 class="display-6">FROM OUR FEED</h3>
-		<div class="row mt-5">
-	
-			@foreach ($feeds as $feed1)
-			<div class="col-3 col-feed">
-				<a href="{{$feed1->link}}">
-				<div class="image">
-					<img src="{{asset('/images/feed/'.$feed1->image_feed) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
-	
-					{{-- <img src="{{asset('/images/1607185632.jpg') }}" alt=""> --}}
-					{{-- <div class="black-hover"></div> --}}
+			<h3 class="display-6">FROM OUR FEED</h3>
+			<div class="row my-5">
+				@foreach ($feeds as $feed1)
+				<div class="col-xl-3 col-lg-4 col-md-6 col-12 col-feed">
+					<a href="{{$feed1->link}}">
+						<div class="image">
+							<img src="{{asset('/images/feed/'.$feed1->image_feed) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
+							{{-- <img src="{{asset('/images/1607185632.jpg') }}" alt=""> --}}
+							{{-- <div class="black-hover"></div> --}}
+						</div>
+					</a>
 				</div>
+				@endforeach
+		
+				{{-- <div class="col-3 ">
+				<a href="">
+					<div class="image">
+					<img src="{{asset('/images/1607185632.jpg') }}" alt="">
+					<div class="black-hover"></div>
+					</div>
 				</a>
-			</div>
-			@endforeach
-	
-			{{-- <div class="col-3 ">
-			<a href="">
-				<div class="image">
-				<img src="{{asset('/images/1607185632.jpg') }}" alt="">
-				<div class="black-hover"></div>
 				</div>
-			</a>
-			</div>
-			<div class="col-3 ">
-			<a href="">
-				<div class="image">
-				<img src="{{asset('/images/1607185632.jpg') }}" alt="">
-				<div class="black-hover"></div>
+				<div class="col-3 ">
+				<a href="">
+					<div class="image">
+					<img src="{{asset('/images/1607185632.jpg') }}" alt="">
+					<div class="black-hover"></div>
+					</div>
+				</a>
 				</div>
-			</a>
-			</div>
-			<div class="col-3 ">
-			<a href="">
-				<div class="image">
-				<img src="{{asset('/images/1607185632.jpg') }}" alt="">
-				<div class="black-hover"></div>
+				<div class="col-3 ">
+				<a href="">
+					<div class="image">
+					<img src="{{asset('/images/1607185632.jpg') }}" alt="">
+					<div class="black-hover"></div>
+					</div>
+				</a>
 				</div>
-			</a>
-			</div>
-			<div class="col-3 ">
-			<a href="">
-				<div class="image">
-				<img src="{{asset('/images/1607185632.jpg') }}" alt="">
-				<div class="black-hover"></div>
+				<div class="col-3 ">
+				<a href="">
+					<div class="image">
+					<img src="{{asset('/images/1607185632.jpg') }}" alt="">
+					<div class="black-hover"></div>
+					</div>
+				</a>
 				</div>
-			</a>
-			</div>
-			<div class="col-3 ">
-			<a href="">
-				<div class="image">
-				<img src="{{asset('/images/1607185632.jpg') }}" alt="">
-				<div class="black-hover"></div>
+				<div class="col-3 ">
+				<a href="">
+					<div class="image">
+					<img src="{{asset('/images/1607185632.jpg') }}" alt="">
+					<div class="black-hover"></div>
+					</div>
+				</a>
 				</div>
-			</a>
-			</div>
-			<div class="col-3 ">
-			<a href="">
-				<div class="image">
-				<img src="{{asset('/images/1607185632.jpg') }}" alt="">
-				<div class="black-hover"></div>
+				<div class="col-3 ">
+				<a href="">
+					<div class="image">
+					<img src="{{asset('/images/1607185632.jpg') }}" alt="">
+					<div class="black-hover"></div>
+					</div>
+				</a>
 				</div>
-			</a>
+				<div class="col-3 ">
+				<a href="">
+					<div class="image">
+					<img src="{{asset('/images/1607185632.jpg') }}" alt="">
+					<div class="black-hover"></div>
+					</div>
+				</a>
+				</div> --}}
 			</div>
-			<div class="col-3 ">
-			<a href="">
-				<div class="image">
-				<img src="{{asset('/images/1607185632.jpg') }}" alt="">
-				<div class="black-hover"></div>
-				</div>
-			</a>
-			</div> --}}
-		</div>
 		</div>
 	</section>
 </section>
