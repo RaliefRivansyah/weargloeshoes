@@ -54,6 +54,7 @@
   .footer-new .copyright {
     border-top: 1px solid #595959; }
 </style>
+
 <div id="whatsapp" class="fixed-bottom">
     <a href="https://api.whatsapp.com/send?phone=62{{$akunperusahaan->link_whatsapp}}"><img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" width="50px"></a>
     {{-- <i class="fab fa-whatsapp fa-4x" style="color: green"></i> --}}
