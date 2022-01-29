@@ -8,7 +8,6 @@
         font-family: 'Roboto-Light', sans-serif;
     }
 
-
     .product-title {
         color: white;
     }
@@ -20,7 +19,6 @@
     .card-text {
         color: white;
     }
-
 
     .single-item {
         display: inline-block;
@@ -62,8 +60,6 @@
         transform: translateY(5px);
     }
 
-
-
     .img-container {
         position: relative;
         overflow: hidden;
@@ -87,9 +83,6 @@
         transform: scale(1.1);
     }
 
-
-
-
     .overlay {
         display: block;
         opacity: 0;
@@ -100,7 +93,6 @@
         margin-left: 0;
         width: 30%;
     }
-
 
     .product-top {
         display: flex;
@@ -157,6 +149,12 @@
         font-weight: 400;
         color: red;
     }
+
+	@media (max-width: 992px) {
+		.product-title {
+			font-size: 2.5rem;
+		}
+	}
 </style>
 
 <section id="products" class="products py-5">
@@ -164,7 +162,7 @@
 
         <div class="row">
             <div class="col-10 mx-auto col-sm-6 text-center">
-                <h1 class="text-capitalize product-title">
+                <h1 class="text-capitalize product-title mb-4">
                     Products
                 </h1>
             </div>
@@ -172,11 +170,10 @@
 
         <div class="row">
             @foreach ($products as $p)
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6 col-12">
                 <div class="product-top mb-5 mt-3">
                     <div class="card single-item">
                         <a href="/detailproduct/{{$p->id}}">
-                        
                             <div class="img-container">
                                 <img src="{{asset('/images/product/imageproduct/'.$p->product_image) }}" alt="" class="card-img-top product-img" />
                             </div>
@@ -187,17 +184,16 @@
                             <a href="/cart/{{$p->id}}">
                                 <button onclick="showAlert()" type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-shopping-cart"></i></button>
                             </a>
-
                         </div> --}}
 
                         <div class="card-body">
                             <div class="card-text d-flex justify-content-between text-capitalize">
-                            <a href="/detailproduct/{{$p->id}}" style="text-decoration: none; color: black">
-                            <h5 id="item-name">{{$p->product_name}} | {{$p->colour}}</h5>
-                            </a>
-                            {{-- <span style="color: red">Rp. 300.000</span> --}}
-                            {{-- <span>Rp. {{ number_format($p->price, 0, ',', '.') }}</i></span>
-                            <span>({{$p->discount}}% Off)</span> --}}
+								<a href="/detailproduct/{{$p->id}}" style="text-decoration: none; color: black">
+									<h5 id="item-name">{{$p->product_name}} | {{$p->colour}}</h5>
+								</a>
+								{{-- <span style="color: red">Rp. 300.000</span> --}}
+								{{-- <span>Rp. {{ number_format($p->price, 0, ',', '.') }}</i></span>
+								<span>({{$p->discount}}% Off)</span> --}}
                             </div>
                             <div id="price">
                                 @if($p->discount== null)
@@ -221,13 +217,9 @@
                 </div>
             </div>
             @endforeach
-
         </div>
         {{ $products ->links() }}
-
-
     </div>
-
 </section>
 
 {{-- <script>
@@ -235,5 +227,4 @@
         alert('Item add to shopping cart');
     }
 </script> --}}
-
 @endSection
