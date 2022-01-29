@@ -167,10 +167,11 @@
     }
 
     tbody, td, tfoot, th, thead, tr {
-    border-style: solid;
-    border-width: 1px !important;
-    border-color: white !important;
-}
+		border-style: solid;
+		border-width: 1px !important;
+		border-color: white !important;
+	}
+
     section#order .button-animate{
         border: 1px solid white;
         position: relative;
@@ -186,7 +187,6 @@
 </style>
 
 <section id="detailproduct">
-
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-6 col-sm-12">
@@ -199,7 +199,7 @@
     
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                            <img src="{{asset('/images/product/imageproduct/'.$products->product_image) }}" class="d-block w-100" alt="...">
+								<img src="{{asset('/images/product/imageproduct/'.$products->product_image) }}" class="d-block w-100" alt="...">
                             </div>
                             {{-- <div class="carousel-item">
                             <img src="./images/1607185722.jpg" class="d-block w-100" alt="...">
@@ -309,15 +309,13 @@
                                   <th scope="col">Size</th>
                                   <th scope="col">Foot Length(cm)</th>
                                 </tr>
-                              </thead>
+							</thead>
                             <tbody>
-
                                 @foreach ($sizecarts as $item)
-                                    
-                                <tr>
-                                <td>{{$item->size}}</td>
-                                <td>{{$item->foot_length}}</td>
-                                </tr>
+								<tr>
+									<td>{{$item->size}}</td>
+									<td>{{$item->foot_length}}</td>
+								</tr>
                                 @endforeach
                                 {{-- <tr>
                                 <td>36</td>

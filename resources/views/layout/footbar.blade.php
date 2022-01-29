@@ -30,8 +30,7 @@
         margin-top: 0px;
         background-color: white;
         color: black;
-}
-    }
+	}
 
     /* footer input[type=text] {
         width: 100%;
@@ -62,6 +61,7 @@
         background-color: transparent;
         color: #1c1b1b;
     }
+
     .product__button .product__button--primary, footer button{
         border: 1px solid #d1d1d1;
         position: relative;
@@ -90,10 +90,12 @@
     }
 
 </style>
+
 <div id="whatsapp" class="fixed-bottom">
     <a href="https://api.whatsapp.com/send?phone=62{{$akunperusahaan->link_whatsapp}}"><img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" width="50px"></a>
     {{-- <i class="fab fa-whatsapp fa-4x" style="color: green"></i> --}}
 </div>
+
 <footer class="footer">
     {{-- <div class="text-center py-5">
         <h2 class="py-3">gloeshoes.leather</h2>
@@ -111,55 +113,48 @@
                     </div>
                 </div>
             </div>
-
             <div class="copyright text-center py-3 border-top text-light">
                 <p>&copy; Copyright gloeshoes.leather</p>
             </div>
-
         </div>
     </div> --}}
+	<div class="container">
+		<div class="grid-container">
+			<div class="grid-item">
+				<a href="/shoes" style="text-decoration: none; color: black"><p>Shop All</p></a>
+				<a href="/new_arrival" style="text-decoration: none; color: black"><p>New Arrivals</p></a>
+				<a href="/aboutus" style="text-decoration: none; color: black"><p>About Us</p></a>
+				{{-- <p>Best Sellers</p>
+				<p>Sale</p> --}}
+			</div>
+			<div class="grid-item">
+				<p>Follow Us</p>
+				<a href="{{$akunperusahaan->link_facebook}}" style="text-decoration: none; color: black"><i class="bi bi-facebook"></i></a>
+				<a href="{{$akunperusahaan->link_instagram}}" style="text-decoration: none; color: black"><i class="bi bi-instagram"></i></a>
+				<a href="{{$akunperusahaan->link_shopee}}"><img src="{{asset('/images/logo/shopee.png') }}" style="width: 24px" alt=""></a>
+				{{-- <a href="{{$akunperusahaan->link_tokopedia}}"><img src="{{asset('/images/logo/tokopedia.png') }}" style="width: 24px" alt=""></a> --}}
+				{{-- <p>How to Order</p>
+				<p>Shipping</p>
+				<p>Return & Exchanges</p>
+				<p>Payment Confirmation</p>
+				<p>Terms of Service</p>   --}}
+			</div>
+			{{-- <div class="grid-item">
+				<p>FAQ</p>
+				<p>Size Guide</p>
+				<p>Contact Us</p>
+			</div> --}}
+			{{-- <div class="grid-item">
+			</div> --}}
+			{{-- <div class="grid-item">
+				<p>Join our newsletter to get the latest news</p>
+				<input type="text" placeholder="Enter your email address" class="mt-2">
+				<button type="button" class="button--primary mt-3"> <span> SUBSCRIBE </span></button>
+			</div> --}}
+		</div>
+	</div>
 
-    
-        <div class="container">
-            <div class="grid-container">
-                <div class="grid-item">
-                    <a href="/shoes" style="text-decoration: none; color: black"><p>Shop All</p></a>
-                    <a href="/new_arrival" style="text-decoration: none; color: black"><p>New Arrivals</p></a>
-                    <a href="/aboutus" style="text-decoration: none; color: black"><p>About Us</p></a>
-                    {{-- <p>Best Sellers</p>
-                    <p>Sale</p> --}}
-                </div>
-                <div class="grid-item">
-                    <p>Follow Us</p>
-                    <a href="{{$akunperusahaan->link_facebook}}" style="text-decoration: none; color: black"><i class="bi bi-facebook"></i></a>
-                    <a href="{{$akunperusahaan->link_instagram}}" style="text-decoration: none; color: black"><i class="bi bi-instagram"></i></a>
-                    <a href="{{$akunperusahaan->link_shopee}}"><img src="{{asset('/images/logo/shopee.png') }}" style="width: 24px" alt=""></a>
-                    {{-- <a href="{{$akunperusahaan->link_tokopedia}}"><img src="{{asset('/images/logo/tokopedia.png') }}" style="width: 24px" alt=""></a> --}}
-                    {{-- <p>How to Order</p>
-                    <p>Shipping</p>
-                    <p>Return & Exchanges</p>
-                    <p>Payment Confirmation</p>
-                    <p>Terms of Service</p>   --}}
-                </div>
-                {{-- <div class="grid-item">
-                    <p>FAQ</p>
-                    <p>Size Guide</p>
-                    <p>Contact Us</p>
-                </div> --}}
-                {{-- <div class="grid-item">
-                </div> --}}
-                {{-- <div class="grid-item">
-                    <p>Join our newsletter to get the latest news</p>
-                    <input type="text" placeholder="Enter your email address" class="mt-2">
-                    <button type="button" class="button--primary mt-3"> <span> SUBSCRIBE </span> </button>
-                </div> --}}
-            </div>
-        </div>
-        <div class="container">
-
-            <a href="/" style="text-decoration: none; color: black"><p>Copyright © 2021 Weargloeshoes All Rights Reserved</p></a>
-        </div>
-
-     
-    
+	<div class="container">
+		<a href="/" style="text-decoration: none; color: black"><p>Copyright © 2021 Weargloeshoes All Rights Reserved</p></a>
+	</div>
 </footer>

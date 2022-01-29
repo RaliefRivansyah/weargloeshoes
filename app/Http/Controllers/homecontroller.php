@@ -30,15 +30,12 @@ class homecontroller extends Controller
         $data['ktgr']= Post::take(3)->get();
         $data['articles']= article::where('active', 1)->take(4)->get();
         return view('pages.home', $data);
-        
     }
 
     public function aboutus()
     {
         $data['accounts'] =  account::first();
         return view('aboutus', $data);
-
-
     }
 
     /**
