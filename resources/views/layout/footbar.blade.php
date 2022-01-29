@@ -77,11 +77,27 @@
   	.footer-new .copyright {
     	border-top: 1px solid #595959;
 	}
+
+	.img-wa {
+		width: 60px;
+	}
+
+	@media (min-width: 768px) and (max-width: 991.98px) {
+		.img-wa {
+			width: 50px;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.img-wa {
+			width: 45px;
+		}
+	}
 </style>
 
 <div id="whatsapp" class="fixed-bottom text-right">
     <a href="https://api.whatsapp.com/send?phone=62{{$akunperusahaan->link_whatsapp}}">
-		<img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" width="60px" class="mb-4 mr-4">
+		<img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" class="img-wa mb-lg-4 mr-lg-4 mb-3 mr-3">
 	</a>
     {{-- <i class="fab fa-whatsapp fa-4x" style="color: green"></i> --}}
 </div>
