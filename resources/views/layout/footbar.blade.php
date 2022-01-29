@@ -97,7 +97,7 @@
 
 <div id="whatsapp" class="fixed-bottom text-right">
     <a href="https://api.whatsapp.com/send?phone=62{{$akunperusahaan->link_whatsapp}}">
-		<img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" class="img-wa mb-lg-4 mr-lg-4 mb-3 mr-3">
+		<img src="https://empirefitclub.com/wp-content/uploads/2018/07/whatsapp.svg" class="img-wa mb-4 mr-4">
 	</a>
     {{-- <i class="fab fa-whatsapp fa-4x" style="color: green"></i> --}}
 </div>

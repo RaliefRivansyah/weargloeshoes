@@ -15,6 +15,4 @@ $(window).scroll(function () {
       // $(".nav-link").removeClass("nav-link-scroll");
       
     }
-
-
-  });
+});

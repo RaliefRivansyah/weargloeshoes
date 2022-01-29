@@ -406,16 +406,16 @@
   }
 </style>
 <section id="home">
-	<section id="swiper">
+	<section id="swiper" class="w-100">
 		<div class="swiper-container mySwiper">
-				<div class="swiper-wrapper">
-					@foreach ($events as $event1)
-						<div class="swiper-slide">
-							<a href="{{$event1->link}}"><img src="{{asset('/images/event/'.$event1->image_event) }}" alt=""></a>
-						</div>
-					@endforeach
-				</div>
-				<div class="swiper-pagination"></div>
+			<div class="swiper-wrapper">
+				@foreach ($events as $event1)
+					<div class="swiper-slide">
+						<a href="{{$event1->link}}"><img src="{{asset('/images/event/'.$event1->image_event) }}" alt=""></a>
+					</div>
+				@endforeach
+			</div>
+			<div class="swiper-pagination"></div>
 		</div>
 	
 		<!-- Swiper JS -->
@@ -423,43 +423,34 @@
 	
 		<!-- Initialize Swiper -->
 		<script>
-		var swiper = new Swiper(".mySwiper", {
-			pagination: {
-			el: ".swiper-pagination",
-			dynamicBullets: true,
-			},
-		});
-		var mySwiper = new Swiper ('.swiper-container', {
-			speed:1000,
+		// var swiper = new Swiper(".mySwiper", {
+		// 	pagination: {
+		// 		el: ".swiper-pagination",
+		// 		dynamicBullets: true,
+		// 	},
+		// });
+		var mySwiper = new Swiper ('.mySwiper', {
+			speed: 1000,
 			direction: 'horizontal',
-			navigation: 
-			{
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-			},
-			pagination: 
-			{
-			el: '.swiper-pagination',
-			dynamicBullets: true,
-			},
 			zoom: true,
-			keyboard: 
-			{
-			enabled: true,
-			onlyInViewport: false,
+			loop: true,
+			pagination: {
+				el: '.swiper-pagination',
+				dynamicBullets: true,
+			},
+			keyboard: {
+				enabled: true,
+				onlyInViewport: false,
 			},
 			// mousewheel: 
 			// {
 			//   invert: true,
 			// },
-			autoplay: 
-			{
-			delay: 4000,
-			},
-			loop: true,
+			autoplay: {
+				delay: 4000,
+			}
 		}); 
 		</script>
-	
 	</section>
 
 	<section id="about-us">
@@ -546,16 +537,16 @@
 				@endforeach
 			</div>
 			<a href="/new_arrival" style="text-decoration: none; color: black">
-				<button type="button" class="view-all-product button-animate"> <span> View all products </span> </button>
+				<button type="button" class="view-all-product button-animate mb-5"> <span> View all products </span> </button>
 			</a>
-			<div class="rocontainer-card">
+			<div class="row">
 				@foreach ($ktgr as $item)
 				{{-- <div class="row">
 				<div class="col kotak kotak1">
 				<img src="{{asset('/images/post/'.$item->image) }}" class="card-img card-ktgr img-fluid" alt="...">
 				{{-- <img src="./images/amy-shamblen-Vq1sd62o0us-unsplash.jpg" alt="" /> --}}
-				<div class="col-md-4">
-					<div class="card bg-dark text-white">
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="card bg-dark text-white mt-2 mb-4">
 						<img src="{{asset('/images/post/'.$item->image) }}" class="card-img card-ktgr img-fluid" alt="...">
 						<div class="card-img-overlay">
 							<h3 class="card-title">{{$item->post_title}}</h3>
@@ -570,104 +561,103 @@
 	
 	<section id="product">
 		<div class="container">
-		<h3 class="display-6">FEATURED PRODUCT</h3>
-		<div class="row mt-5">
-			<div class="col-md-5 col-sm-12">  
-				<a href="/detailproduct/{{$featured->id}}">
-				
-				<div class="image">
-					<img src="{{asset('/images/product/imageproduct/'.$featured->product_image) }}" alt="">
+			<h3 class="display-6 my-5">FEATURED PRODUCT</h3>
+			<div class="row mb-5">
+				<div class="col-md-5 col-sm-12">  
+					<a href="/detailproduct/{{$featured->id}}">
+						<div class="image">
+							<img src="{{asset('/images/product/imageproduct/'.$featured->product_image) }}" alt="">
+						</div>
+					</a>
 				</div>
-				</a>
+				<div class="product__description col-md-5 offset-md-1 col-sm-12">
+					<h1 class="py-2">{{$featured->product_name}}</h1>
+					<h2 class="py-2">{{$featured->colour}}</h2>
+					{{-- <h3 class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3> --}}
+					{{-- <h3 class="py-2" style="color:red">Rp. 300.000</h3> --}}
+					{{-- <h2 class="py-2">({{$featured->discount}}% Off)</h2> --}}
+
+					@if($featured->discount== null)
+					<h3 id="price" class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
+					@else
+					<h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
+					<h3 id="afterprice" class="py-2">Rp. {{number_format($featured->price-($featured->price*($featured->discount/100)), 0, ',', '.')}}</h3>
+					<h2 class="py-2">({{$featured->discount}}% Off)</h2>
+					@endif
+
+					{{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
+					{{-- @foreach ($featureds as $item)
+					<a href="/detailproduct/{{$item->id}}">
+					
+					<img src="{{asset('/images/'.$item->product_image) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
+					</a>
+					
+					@endforeach --}}
+					{{-- <div class="row product__size">
+						<div class="col-6">
+							<p>Size: </p>
+						</div>
+						<div class="col-6 product__size-chart">
+							<a href="#"><p>Size chart</p></a>
+						</div>
+			
+						<div class="product__size--table">
+							<h1>36</h1>
+							<h1>37</h1>
+							<h1>38</h1>
+							<h1>39</h1>
+							<h1>40</h1>
+						</div>
+					</div> --}}
+
+					<div class="row product__size">
+						{{-- <div class="col-6">
+							<p>Size: </p>
+						</div> --}}
+
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+							Size chart
+						</button>
+						{{-- <div class="col-6 product__size-chart">
+							<a href="#"><p>Size chart</p></a>
+						</div> --}}
+
+						<!-- Modal -->
+						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-xl">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Size chart</h5>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<img src="{{asset('/images/detailproduct/size cart.jpeg') }}" style="width: 850px" alt="">
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+									{{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{{-- <div class="product__size--table">
+							<h1>36</h1>
+							<h1>37</h1>
+							<h1>38</h1>
+							<h1>39</h1>
+							<h1>40</h1>
+						</div> --}}
+					</div>
+			
+					{{-- <div class="product__button">
+						<button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
+						<button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
+					</div> --}}
+					<a href="/detailproduct/{{$featured->id}}" style="color: black">View product details</a>
+				</div> 
 			</div>
-			<div class="product__description col-md-5 offset-md-1 col-sm-12">
-				<h1 class="py-2">{{$featured->product_name}}</h1>
-				<h2 class="py-2">{{$featured->colour}}</h2>
-				{{-- <h3 class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3> --}}
-				{{-- <h3 class="py-2" style="color:red">Rp. 300.000</h3> --}}
-				{{-- <h2 class="py-2">({{$featured->discount}}% Off)</h2> --}}
-
-				@if($featured->discount== null)
-				<h3 id="price" class="py-2">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
-				@else
-				<h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($featured->price, 0, ',', '.') }}</h3>
-				<h3 id="afterprice" class="py-2">Rp. {{number_format($featured->price-($featured->price*($featured->discount/100)), 0, ',', '.')}}</h3>
-				<h2 class="py-2">({{$featured->discount}}% Off)</h2>
-				@endif
-
-				{{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
-				{{-- @foreach ($featureds as $item)
-				<a href="/detailproduct/{{$item->id}}">
-				
-				<img src="{{asset('/images/'.$item->product_image) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
-				</a>
-				
-				@endforeach --}}
-				{{-- <div class="row product__size">
-					<div class="col-6">
-						<p>Size: </p>
-					</div>
-					<div class="col-6 product__size-chart">
-						<a href="#"><p>Size chart</p></a>
-					</div>
-		
-					<div class="product__size--table">
-						<h1>36</h1>
-						<h1>37</h1>
-						<h1>38</h1>
-						<h1>39</h1>
-						<h1>40</h1>
-					</div>
-				</div> --}}
-
-				<div class="row product__size">
-				{{-- <div class="col-6">
-					<p>Size: </p>
-				</div> --}}
-
-				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-					Size chart
-					</button>
-				{{-- <div class="col-6 product__size-chart">
-					<a href="#"><p>Size chart</p></a>
-				</div> --}}
-
-				<!-- Modal -->
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-xl">
-					<div class="modal-content">
-						<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Size chart</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-						<img src="{{asset('/images/detailproduct/size cart.jpeg') }}" style="width: 850px" alt="">
-						</div>
-						<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						{{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
-						</div>
-					</div>
-					</div>
-				</div>
-
-				{{-- <div class="product__size--table">
-					<h1>36</h1>
-					<h1>37</h1>
-					<h1>38</h1>
-					<h1>39</h1>
-					<h1>40</h1>
-				</div> --}}
-			</div>
-		
-				{{-- <div class="product__button">
-					<button type="button" class="product__button--primary"> <span> ADD TO CART </span> </button>
-					<button type="button"> <i class="bi bi-suit-heart me-2"></i>Add To Wishlist </button>
-				</div> --}}
-				<a href="/detailproduct/{{$featured->id}}" style="color: black">View product details</a>
-			</div> 
-		</div>
 		</div>
 	</section>
 
@@ -776,6 +766,4 @@
 		</div>
 	</section>
 </section>
-
-
 @endsection
