@@ -22,7 +22,7 @@
 	<style>
 		#swiper .swiper-container {
 			width: 100%;
-			height: 85vh;
+			/* height: 85vh; */
 		}
 
 		#swiper .swiper-slide {
@@ -44,7 +44,7 @@
 			-webkit-align-items: center;
 			align-items: center;
 			width: 100%;
-			height: 77vh;
+			/* height: 77vh; */
 		}
 
 		#swiper .swiper-slide img {
@@ -59,9 +59,10 @@
 				width: 100%;
 				height: 20vh !important;
 			}
-			#swiper .swiper-container {
+
+			/* #swiper .swiper-container {
 				height: 30vh;
-			}
+			} */
 		}
 		/* swiper */
 
@@ -452,15 +453,13 @@
 	</style>
 @endsection
 
-
-
 @section('content')
 	<section id="home">
 		<section id="swiper" class="w-100 splide">
 			<div class="swiper-container mySwiper splide__track">
 				<div class="swiper-wrapper splide__list">
 					@foreach ($events as $event1)
-						<div class="swiper-slide splide__slide">
+						<div class="swiper-slide splide__slide" data-splide-interval="5000">
 							<a href="{{$event1->link}}"><img src="{{asset('/images/event/'.$event1->image_event) }}" alt=""></a>
 						</div>
 					@endforeach
@@ -505,13 +504,15 @@
 			<!-- Splide JS -->
 			<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
 			<script>
-				var splide = new Splide( '.splide', {
+				var splide = new Splide('.splide', {
 					type: 'loop',
 					focus: 'center',
 					perPage: 1,
-					autoScroll: {
-						speed: 2,
-					},
+					arrows: 'slider',
+					lazyLoad: 'nearby',
+					speed: 1000,
+					pauseOnHover: false,
+					autoplay: true
 				});
 
 				splide.mount();
@@ -521,7 +522,7 @@
 		</section>
 
 		<section id="about-us">
-			<div class="container">
+			<div class="container mt-5">
 				<h1 class="judul">ABOUT US</h1>
 				<p class="mx-5 mb-5 text-justify">{!! $accounts->description_company !!}}</p>
 			</div>
