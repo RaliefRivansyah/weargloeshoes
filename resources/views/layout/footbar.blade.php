@@ -108,7 +108,7 @@
 		<div class="row">
 			<div class="col-md-4 pr-md-5">
 				<a href="#" class="footer-site-logo d-block mb-4">Weargloeshoes</a>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quasi perferendis ratione perspiciatis accusantium.</p>
+				<p>Kamu bisa beli produk dari Weargloeshoes Online dengan aman & mudah sekarang. </p>
 			</div>
 			<div class="col-md-2">
 				<h3>Discover</h3>

@@ -48,9 +48,19 @@
 
   #swiper .swiper-slide img {
     display: block;
-    width: 100vw;
-    height: 77vh;
-    object-fit:  cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+  }
+  
+  @media (min-width: 576px) and (max-width: 768px){
+	#swiper .swiper-slide {
+		width: 100%;
+    	height: 20vh !important;
+	}
+	#swiper .swiper-container {
+		height: 30vh;
+	}
   }
  /* swiper */
 
