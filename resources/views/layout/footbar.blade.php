@@ -103,7 +103,7 @@
 </div>
 
 {{-- NewFooter --}}
-<footer class="footer-new" style="background-image: url('images/hero_1.jpg');">
+<footer class="footer-new">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 pr-md-5">
