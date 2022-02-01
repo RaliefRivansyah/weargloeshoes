@@ -79,7 +79,7 @@
 	}
 
 	.img-wa {
-		width: 60px;
+		width: 55px;
 	}
 
 	@media (min-width: 768px) and (max-width: 991.98px) {
