@@ -16,39 +16,40 @@ class AuthController extends Controller
 
         $request->validate(
             [
-                'nama' => 'required',
-                'email' => 'required|unique:users,email',
-                'phone' => 'required',
-                'password' => 'required|min:6',
+                'namareg' => 'required',
+                'emailreg' => 'required|unique:users,email',
+                'phonereg' => 'required',
+                'passwordreg' => 'required|min:6',
                 'confirm-pass' => 'required|min:6|same:password'
             ],
             [
-                'nama.required' => 'Please input your name.',
-                'email.required' => 'Please input your email',
-                'email.unique' => 'Email has already taken, please input another email',
-                'phone.required' => 'Please input your phone number',
-                'password.required' => 'Please input your password',
+                'namareg.required' => 'Please input your name.',
+                'emailreg.required' => 'Please input your email',
+                'emailreg.unique' => 'Email has already taken, please input another email',
+                'phonereg.required' => 'Please input your phone number',
+                'passwordreg.required' => 'Please input your password',
+                'passwordreg.min' => 'The password must be at least 10 characters',
                 'confirm-pass.required' => 'Please input your confirmation password',
                 'confirm-pass.same' => "Confirmation password don't match with password"
-
             ]
         );
 
         DB::table('users')->insert([
-            'nama' => $request->nama,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'password' => password_hash($request->password, PASSWORD_DEFAULT),
+            'nama' => $request->namareg,
+            'email' => $request->emailreg,
+            'phone' => $request->phonereg,
+            'password' => password_hash($request->passwordreg, PASSWORD_DEFAULT),
         ]);
 
         $request->session()->flash('register', 'Register Success!');
+        Mail::to($request->emailreg)->send(new SentToEmail($request->namareg, DB::getPdo()->lastInsertID()));
         
             // $report = new AuthController();
-            $content = new Request();
-            $content = $request;
-            return $this->login($content);
+            // $content = new Request();
+            // $content = $request;
+            // return $this->login($content);
         
-        // return redirect('login');
+        return redirect('/login-register');
     }
 
     public function login(Request $request)
@@ -65,7 +66,15 @@ class AuthController extends Controller
             ]
         );
 
-        $log = DB::table('users')->where('email', $request->email)->first();
+        $log = DB::table('users')->where([
+            'email', $request->email,
+            'status' => 1
+        ])->first();
+
+        if($log == null) {
+            $request->session()->flash('login', 'Email not verified');
+            return redirect('login-register');
+        }
         // $user = Auth::id();
         // $currentUser = DB::table('users')->find($user);
         $logUser = $log->nama;
