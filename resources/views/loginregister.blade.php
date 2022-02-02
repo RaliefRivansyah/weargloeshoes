@@ -85,8 +85,8 @@
                 {{ csrf_field() }}
                 <div class="form-group mt-5">
                     <label for="exampleInputEmail1">Full Name</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" aria-describedby="emailHelp" name="nama" value="{{old('nama')}}">
-                    @error('nama')
+                    <input type="text" class="form-control @error('namareg') is-invalid @enderror" id="nama" aria-describedby="emailHelp" name="nama" value="{{old('namareg')}}">
+                    @error('namareg')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -95,8 +95,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{old('email')}}">
-                    @error('email')
+                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="emailreg" name="emailreg" value="{{old('emailreg')}}">
+                    @error('emailreg')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -104,8 +104,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Phone Number</label>
-                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{old('phone')}}">
-                    @error('phone')
+                    <input type="text" class="form-control @error('phonereg') is-invalid @enderror" id="phonereg" name="phonereg" value="{{old('phone')}}">
+                    @error('phonereg')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -113,8 +113,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{old('password')}}">
-                    @error('password')
+                    <input type="password" class="form-control @error('passwordreg') is-invalid @enderror" id="passwordreg" name="passwordreg" value="{{old('password')}}">
+                    @error('passwordreg')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
