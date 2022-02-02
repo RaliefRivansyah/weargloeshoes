@@ -38,6 +38,7 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', [ homecontroller::class, 'index']);
 
+Route::get('/verification/{id}', [SentToMailController::class, 'index']);
 // function () {
 //     return view('pages.home');
 // });
@@ -53,10 +54,14 @@ Route::get('/login', function () {
 });
 
 Route::get('/admin-login', function () {
+    if (session('admin'))
+        return redirect('admin');
     return view('pages.admin_login');
 });
 
 Route::get('/login-register', function () {
+    if(session('user'))
+        return redirect('/');
     return view('loginregister');
 });
 
