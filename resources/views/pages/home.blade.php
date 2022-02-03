@@ -450,6 +450,15 @@
 			margin-top:30px; 
 			transform: translateX(-50%);
 		}
+
+		@media (min-width: 576px) and (max-width: 768px){
+			#article .image{
+			padding: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		}
+
 	</style>
 @endsection
 
@@ -736,7 +745,7 @@
 				<h3 class="display-6">ARTICLE</h3>
 				<div class="row mt-5">
 					@foreach ($articles as $article1)
-					<div class="col-lg-4 col-md-6 col-12">
+					{{-- <div class="col-lg-4 col-md-6 col-12">
 						<div class="">
 							<a href="/pages/article/detailarticle/{{$article1->id}}">
 								<div class="image w-100">
@@ -749,7 +758,17 @@
 								<p class="jdl" >{{$article1->title}}</p>
 							</a>
 						</div>
-					</div>
+					</div> --}}
+
+					<div href="/pages/article/detailarticle/{{$article1->id}}" class="card" style="width: 18rem;">
+						<img class="card-img-top" src="{{asset('/images/article/'.$article1->image_article) }}" alt="Card image cap">
+						<div class="card-body">
+							<a href="/pages/article/detailarticle/{{$article1->id}}" style="text-decoration: none; color: black">
+								<p class="jdl" >{{$article1->title}}</p>
+							</a>
+						</div>
+					  </div>
+
 					@endforeach
 					<a href="/pages/article/article" style="text-decoration: none; color: black">
 						<button type="button" class="view-all-article button-animate"> <span> View all articles </span> </button>
