@@ -191,6 +191,43 @@
 			max-height: 320px;
 		}
 
+		@media (min-width: 1400px) {
+			#feed .image img{
+				max-height: 320px;
+			}
+		}
+
+		@media (max-width: 1399.98px) and (min-width: 1200px) {
+			#feed .image img{
+				max-height: 275px;
+			}
+		}
+
+		@media (max-width: 1199.98px) and (min-width: 992px) {
+			#feed .image img{
+				max-height: 230px;
+			}
+		}
+
+		@media (max-width: 991.98px) and (min-width: 768px) {
+			#feed .image img{
+				max-height: 350px;
+			}
+		}
+
+		@media (max-width: 767.98px) and (min-width: 576px) {
+			#feed .image img{
+				max-height: 530px;
+			}
+		}
+
+		@media (max-width: 575.98px) {
+			#feed .image img{
+				max-height: none;
+				height: auto;
+			}
+		}
+
 		#feed .col-feed{
 			padding: 0px;
 		}
