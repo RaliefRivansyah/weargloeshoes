@@ -185,9 +185,10 @@
 		}
 
 		#feed .image img{
-			margin-top: 10px;
-			width: 24.5vw;
-			height: 24.5vw;
+			/* margin-top: 10px; */
+			/* width: 24.5vw;
+			height: 24.5vw; */
+			max-height: 320px;
 		}
 
 		#feed .col-feed{
@@ -196,8 +197,8 @@
 
 		#feed .image{
 			padding: 0px;
-			width: 24.5vw;
-			height: 24.5vw;
+			/* width: 24.5vw;
+			height: 24.5vw; */
 		}
 
 		#feed .black-hover{
@@ -370,8 +371,9 @@
 
 		#article .image img{
 			margin-top: 10px;
-			width: 24.5vw;
-			height: 24.5vw;
+			/* width: 24.5vw; */
+			/* height: 24.5vw; */
+			/* max-width: ; */
 		}
 
 		#article .col-feed{
@@ -381,7 +383,8 @@
 		#article .image{
 			padding: 0px;
 			width: 24.5vw;
-			height: 24.5vw;
+			height: auto;
+			max-width: ;
 		}
 		
 		#article .black-hover{
@@ -406,7 +409,7 @@
 		}
 
 		#article .article-content-desc{
-			margin-top: 17px;
+			/* margin-top: 17px; */
 		}
 
 		#article .article-content-desc p.jdl{
@@ -736,8 +739,8 @@
 				<h3 class="display-6">ARTICLE</h3>
 				<div class="row mt-5">
 					@foreach ($articles as $article1)
-					<div class="col-lg-4 col-md-6 col-12">
-						<div class="">
+					<div class="col-lg-3 col-md-6 col-12">
+						<div class="w-100">
 							<a href="/pages/article/detailarticle/{{$article1->id}}">
 								<div class="image w-100">
 									<img src="{{asset('/images/article/'.$article1->image_article) }}" class="img-thumbnail mb-3" alt="...">     
@@ -757,16 +760,16 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<section id="feed">
-			<div class="container-feed container-fluid">
+			<div class="container-feed container">
 				<h3 class="display-6">FROM OUR FEED</h3>
 				<div class="row my-5">
 					@foreach ($feeds as $feed1)
-					<div class="col-xl-3 col-lg-4 col-md-6 col-12 col-feed">
+					<div class="col-lg-3 col-md-6 col-12 col-feed">
 						<a href="{{$feed1->link}}">
-							<div class="image">
-								<img src="{{asset('/images/feed/'.$feed1->image_feed) }}" class="img-thumbnail mb-3" width="64px" alt="...">     
+							<div class="image w-100">
+								<img src="{{asset('/images/feed/'.$feed1->image_feed) }}" class="img-thumbnail w-100" alt="...">     
 								{{-- <img src="{{asset('/images/1607185632.jpg') }}" alt=""> --}}
 								{{-- <div class="black-hover"></div> --}}
 							</div>
