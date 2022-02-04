@@ -113,17 +113,17 @@
 			<div class="col-md-2">
 				<h3>Discover</h3>
 				<ul class="list-unstyled nav-links">
-					<li><a href="#">Shop All</a></li>
-					<li><a href="#">New Arrivals</a></li>
-					<li><a href="#">About Us</a></li>
+					<li><a href="/shoes">Shop All</a></li>
+					<li><a href="/new_arrival">New Arrivals</a></li>
+					<li><a href="/aboutus">About Us</a></li>
 				</ul>
 			</div>
 			<div class="col-md">
 				<h3>Follow Us</h3>
 				<ul class="social list-unstyled">
-					<li><a href="#"><i class="bi bi-facebook"></i></a></li>
-					<li><a href="#"><i class="bi bi-instagram"></i></a></li>
-					<li><a href="#"><img src="{{asset('/images/logo/shopee.png') }}" style="width: 24px" alt=""></span></a></li>
+					<li><a href="{{$akunperusahaan->link_facebook}}"><i class="bi bi-facebook"></i></a></li>
+					<li><a href="{{$akunperusahaan->link_instagram}}"><i class="bi bi-instagram"></i></a></li>
+					<li><a href="{{$akunperusahaan->link_shopee}}"><img src="{{asset('/images/logo/shopee.png') }}" style="width: 24px" alt=""></span></a></li>
 				</ul>
 			</div>
 		</div> 
