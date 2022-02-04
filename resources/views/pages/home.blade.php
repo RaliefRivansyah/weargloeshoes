@@ -798,16 +798,7 @@
 								<p class="jdl" >{{$article1->title}}</p>
 							</a>
 						</div>
-					</div> --}}
-
-					<div href="/pages/article/detailarticle/{{$article1->id}}" class="card" style="width: 18rem;">
-						<img class="card-img-top" src="{{asset('/images/article/'.$article1->image_article) }}" alt="Card image cap">
-						<div class="card-body">
-							<a href="/pages/article/detailarticle/{{$article1->id}}" style="text-decoration: none; color: black">
-								<p class="jdl" >{{$article1->title}}</p>
-							</a>
-						</div>
-					  </div>
+					</div>
 
 					@endforeach
 					<a href="/pages/article/article" style="text-decoration: none; color: black">

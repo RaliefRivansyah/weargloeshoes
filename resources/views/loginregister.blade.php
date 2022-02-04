@@ -7,14 +7,14 @@
     .login {
 
         margin-top: 60px;
-        margin-bottom: 370px;
+        margin-bottom: 10vh;
         padding: 40px;
         border: solid 1px lightgrey;
     }
 
     .reg {
         margin-top: 60px;
-        margin-bottom: 370px;
+        margin-bottom: 10vh;
         padding: 40px;
         border: solid 1px lightgrey;
     }
@@ -23,7 +23,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="container login col-5">
+        <div class="container login col-sm">
             @if(Session::has('register'))
             <div class="alert alert-success" role="alert">
                 {{Session('register')}}
@@ -79,7 +79,7 @@
 
         <div class="col-2"></div>
  
-        <div class="container reg  col-5">
+        <div class="container reg col-sm">
             <h3 class="d-flex justify-content-center">Register</h3>
             <form action="auth/register" method="POST">
                 {{ csrf_field() }}
