@@ -490,6 +490,15 @@
 			margin-top:30px; 
 			transform: translateX(-50%);
 		}
+
+		@media (min-width: 576px) and (max-width: 768px){
+			#article .image{
+			padding: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		}
+
 	</style>
 @endsection
 
@@ -790,6 +799,7 @@
 							</a>
 						</div>
 					</div>
+
 					@endforeach
 					<a href="/pages/article/article" style="text-decoration: none; color: black">
 						<button type="button" class="view-all-article button-animate"> <span> View all articles </span> </button>
