@@ -21,7 +21,7 @@ class AuthController extends Controller
                 'emailreg' => 'required|unique:users,email',
                 'phonereg' => 'required',
                 'passwordreg' => 'required|min:6',
-                'confirm-pass' => 'required|min:6|same:password'
+                'confirm-pass' => 'required|min:6|same:passwordreg'
             ],
             [
                 'namareg.required' => 'Please input your name.',
@@ -59,7 +59,7 @@ class AuthController extends Controller
         $request->validate(
             [
                 'email' => 'required',
-                'password' => 'required|min:10',
+                'password' => 'required|min:6',
             ],
             [
                 'email.required' => 'Please input your email',
