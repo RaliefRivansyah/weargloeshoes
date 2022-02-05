@@ -31,7 +31,13 @@ class SentToEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('admin@weargloeshoes.com')
+
+        $this->withSwiftMessage(function ($message) {
+            $message->getHeaders()->addTextHeader(
+                'Weargloeshoes', 'Official Email'
+            );
+        });
+        $this->from("genbipens@gmail.com", "Weargloeshoes")
             ->view('email')
             ->with(
                 [
@@ -39,6 +45,7 @@ class SentToEmail extends Mailable
                     'website' => "weargloeshoes.com",
                     'link' => URL::to('/verification/' . $this->id)
                 ]
-            );
+            )->subject("Weargloeshoes Email Verification");
+        return $this;
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use illuminate\Validation\Rule;
 use App\Mail\SentToEmail;
 use Illuminate\Support\Facades\Mail;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -42,8 +43,9 @@ class AuthController extends Controller
             'password' => password_hash($request->passwordreg, PASSWORD_DEFAULT),
         ]);
 
-        $request->session()->flash('register', 'Register Success!');
-        Mail::to($request->emailreg)->send(new SentToEmail($request->namareg, DB::getPdo()->lastInsertID()));
+        Mail::to($request->emailreg, 'Weargloeshoes')->send(new SentToEmail($request->namareg, DB::getPdo()->lastInsertID()));
+        $request->session()->flash('register', 'Register Success! Check Your Email to Verification');
+        
         
             // $report = new AuthController();
             // $content = new Request();
@@ -67,13 +69,14 @@ class AuthController extends Controller
             ]
         );
 
-        $log = DB::table('users')->where([
-            'email', $request->email,
-            'status' => 1
-        ])->first();
+        // $log = DB::table('users')->where([
+        //     'email', $request->email,
+        //     'status' 1
+        // ])->first();
+        $log = User::where('email', $request->email)->where('status', 1)->first();
 
         if($log == null) {
-            $request->session()->flash('login', 'Email not verified');
+            $request->session()->flash('login', 'Email not yet registered or verified');
             return redirect('login-register');
         }
         // $user = Auth::id();
