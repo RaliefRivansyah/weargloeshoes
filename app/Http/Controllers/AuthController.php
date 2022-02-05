@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use illuminate\Validation\Rule;
-
+use App\Mail\SentToEmail;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
