@@ -85,7 +85,7 @@
                 {{ csrf_field() }}
                 <div class="form-group mt-5">
                     <label for="exampleInputEmail1">Full Name</label>
-                    <input type="text" class="form-control @error('namareg') is-invalid @enderror" id="nama" aria-describedby="emailHelp" name="nama" value="{{old('namareg')}}">
+                    <input type="text" class="form-control @error('namareg') is-invalid @enderror" id="namareg" aria-describedby="emailHelp" name="namareg" value="{{old('namareg')}}">
                     @error('namareg')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -95,7 +95,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="emailreg" name="emailreg" value="{{old('emailreg')}}">
+                    <input type="text" class="form-control @error('emailreg') is-invalid @enderror" id="emailreg" name="emailreg" value="{{old('emailreg')}}">
                     @error('emailreg')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -104,7 +104,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Phone Number</label>
-                    <input type="text" class="form-control @error('phonereg') is-invalid @enderror" id="phonereg" name="phonereg" value="{{old('phone')}}">
+                    <input type="text" class="form-control @error('phonereg') is-invalid @enderror" id="phonereg" name="phonereg" value="{{old('phonereg')}}">
                     @error('phonereg')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -113,7 +113,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control @error('passwordreg') is-invalid @enderror" id="passwordreg" name="passwordreg" value="{{old('password')}}">
+                    <input type="password" class="form-control @error('passwordreg') is-invalid @enderror" id="passwordreg" name="passwordreg" value="{{old('passwordreg')}}">
                     @error('passwordreg')
                     <div class="invalid-feedback">
                         {{ $message }}
