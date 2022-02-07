@@ -49,6 +49,9 @@
 
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
+            <a class="float-right" href="{{ route('password.request') }}">
+                {{ __('Lupa Password?') }}
+            </a>
             <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{old('password')}}">
             @error('password')
             <div class="invalid-feedback">

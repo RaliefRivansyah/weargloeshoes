@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use illuminate\Validation\Rule;
 use App\Mail\SentToEmail;
+use App\Mail\Resetpwd;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 
@@ -21,8 +22,8 @@ class AuthController extends Controller
                 'namareg' => 'required',
                 'emailreg' => 'required|unique:users,email',
                 'phonereg' => 'required',
-                'passwordreg' => 'required|min:6',
-                'confirm-pass' => 'required|min:6|same:passwordreg'
+                'passwordreg' => 'required|min:8',
+                'confirm-pass' => 'required|min:8|same:passwordreg'
             ],
             [
                 'namareg.required' => 'Please input your name.',
@@ -30,7 +31,7 @@ class AuthController extends Controller
                 'emailreg.unique' => 'Email has already taken, please input another email',
                 'phonereg.required' => 'Please input your phone number',
                 'passwordreg.required' => 'Please input your password',
-                'passwordreg.min' => 'The password must be at least 10 characters',
+                'passwordreg.min' => 'The password must be at least 8 characters',
                 'confirm-pass.required' => 'Please input your confirmation password',
                 'confirm-pass.same' => "Confirmation password don't match with password"
             ]
@@ -61,7 +62,7 @@ class AuthController extends Controller
         $request->validate(
             [
                 'email' => 'required',
-                'password' => 'required|min:6',
+                'password' => 'required|min:8',
             ],
             [
                 'email.required' => 'Please input your email',
@@ -137,5 +138,39 @@ class AuthController extends Controller
     {
         DB::table('users')->where('id', $id)->delete();
         return redirect('/admin/users');
+    }
+
+    public function ResetPwd(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+        $data = User::where('email', $request->email)->first();
+        if(!empty($data)){
+            $token = Hash::make($request->email);
+            $data->token = $token;
+            $data->save();
+            Mail::to($request->email, 'Weargloeshoes')->send(new Resetpwd($data->nama, $data->id, $token));
+            return redirect()->route('password.request')
+            ->with('status', 'Link Reset Password Telah Dikirim, Silahkan Cek Email Kamu!');
+        }else return redirect()->route('password.request')->with('errors', 'Email Kamu Belum Terdaftar!');
+    }
+
+    public function SubmitResetPwd(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|min:8|same:password'
+        ]);
+
+        $data = User::where('id', $request->id)->where('token', $request->token)->first();
+        if(!empty($data)){
+            $data->password = Hash::make($request->password_confirmation);
+            $data->save();
+            $request->session()->flash('register', 'Password Berhasil Diupdate! Silahkan Login menggunakan Password terbaru!');
+            // return redirect('login');
+            return redirect('login');
+        }else return redirect()->route('password.reset')->with('errors', 'Data yang Kamu masukkan Salah!');
     }
 }

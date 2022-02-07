@@ -8,20 +8,21 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\URL;
 
-class SentToEmail extends Mailable
+class Resetpwd extends Mailable
 {
     use Queueable, SerializesModels;
-    private $nama, $id;
+    private $nama, $id, $token;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($nama, $id)
+    public function __construct($nama, $id, $token)
     {
         $this->nama = $nama;
         $this->id = $id;
+        $this->token = $token;
     }
 
     /**
@@ -38,14 +39,14 @@ class SentToEmail extends Mailable
             );
         });
         $this->from("antoniusekoputranto987@gmail.com", "Weargloeshoes")
-            ->view('email')
+            ->view('resetpwd')
             ->with(
                 [
                     'nama' => $this->nama,
                     'website' => "weargloeshoes.com",
-                    'link' => URL::to('/verification/' . $this->id)
+                    'link' => URL::to('/reset-password/' . $this->id.'/'.$this->token)
                 ]
-            )->subject("Weargloeshoes Email Verification");
+            )->subject("Weargloeshoes Forgot Password");
         return $this;
     }
 }
