@@ -83,11 +83,13 @@ class AuthController extends Controller
         // $user = Auth::id();
         // $currentUser = DB::table('users')->find($user);
         $logUser = $log->nama;
+        $login = $log;
 
         if ($log) {
             if (Hash::check($request->password, $log->password)) {
                 session(['success' => true]);
                 session(['user' => $logUser]);
+                session(['auth' => $login]);
                 // $userSession = $request->session->put('user', $log->nama);
                 return redirect('/');
                 // return ($log->email);
@@ -119,6 +121,7 @@ class AuthController extends Controller
         if ($log) {
             if (Hash::check($request->password, $log->password)) {
                 session(['admin' => true]);
+                session(['auth' => $log]);
                 return redirect('/admin');
             }
         }

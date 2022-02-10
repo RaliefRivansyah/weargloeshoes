@@ -32,6 +32,7 @@ class ProductController extends Controller
             'colour' => $request->colour,
             'heel_height' => $request->heel_height,
             'active' => $request->active,
+            'no_rekening' => $request->no_rekening,
             'created_at' =>  now(),
         ]);
         $tujuan_upload = 'images/product/imageproduct';
@@ -165,6 +166,7 @@ dd($request);
                 'discount' => $request->discount,
                 'colour' => $request->colour,
                 'heel_height' => $request->heel_height,
+                'no_rekening' => $request->no_rekening,
                 'active' => $request->active,
             ]);
         // }

@@ -348,14 +348,72 @@
                             </tbody>
                         </table>
                     </div>
-                    <section id="order">
-                        <a type="button" href='https://api.whatsapp.com/send?phone=62{{$accounts->link_whatsapp}}' style="text-decoration: none; color: black;" class="button-animate"> <span> Order </span> </a>
-                    </section>
+                    {{-- <section id="order"> --}}
+                        <button type="button" data-bs-keyboard="false" 
+                        class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#order" > Order</button>
+                        <div class="modal fade" id="order" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+                            <div class="modal-dialog">
+                            <form method="post" action="{{route('store.orders', ['id' => $products->id])}}" enctype="multipart/form-data">
+                                @csrf
+                            <div class="modal-content">
+                               <div class="modal-header">
+                               <h5 class="modal-title" id="exampleModalLabel">Detail Order</h5>
+                               <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                X
+                               </button>
+                               </div>
+                               
+                               <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="jumlah">Jumlah</label>
+                                    <div class="input-group inline-group">
+                                  <div class="input-group-prepend">
+                                    <a  class="btn btn-outline-secondary btn-minus" id="min">
+                                      <i class="fa fa-minus"></i>
+                                    </a>
+                                  </div>
+                                  <input class="form-control quantity" min="0" id="QTY" name="quantity" type="number" value="1" style="min-width : 25%;"/>
+                                  <div class="input-group-append">
+                                    <a  class="btn btn-outline-secondary btn-plus" id="plus">
+                                      <i class="fa fa-plus"></i>
+                                    </a>
+                                  </div>
+                                    </div>
+                              </div>
+                              <input type="hidden" id="PRICE" name="price_now" value="{{$products->price-($products->price*($products->discount/100))}}">
+                              <input type="hidden" id="total_input" name="total_price">    
+                                    <div class="form-group">
+                                        <label>Alamat</label>
+                                        <textarea class="form-control" name="alamat"></textarea>
+                                    </div>
+                                   <div class="form-group">
+                                       <label>Nomor Telepon</label>
+                                       <input type="number" class="form-control" name="no_telp">
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Bukti Transfer (Silahkan melakukan pembayaran ke Nomor Rekening Berikut : {{$products->no_rekening}} )</label>
+                                        <input type="file" class="form-control" name="bukti_tf">
+                                    </div>
+                               </div>
+                               <div class="modal-footer">
+                                   <div class="mr-auto w-0">
+                                       <button type="submit" onclick="return confirm('Yakin ingin melakukan Pembelian?')" class="btn btn-primary btn-lg">Order</button>
+                                       <button type="reset" class="btn btn-danger">Reset</button>
+                                   </div>
+                                   <label>Total Rp: <h3 id="TOTAL"></h3></label>
+                               {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> --}}
+                               {{-- <a href="/user/profile/edit" class="btn btn-primary">Edit Profil</a> --}}
+                               </div>
+                            </form>
+                            </div>
+                            </div>
+                         </div>
+                    {{-- </section> --}}
                 </section>
             </div>
         </div>
     </div>
-    
+   
     <section class="value-proposition">
         <div class="container">
             <div class="row">
@@ -389,6 +447,7 @@
         </div>
         
     </section>
+    
 </section>
 
 {{-- <footer>

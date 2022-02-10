@@ -157,6 +157,10 @@
                 <label for="description">Description</label>
                 <textarea type="text" class="form-control" id="description" style="height: 150px" name="description"></textarea>
         </div>
+        <div class="form-group">
+          <label for="Nomor Rekening">No Rekening</label>
+          <input type="text" class="form-control" id="no_rekening" name="no_rekening">
+        </div>
         <h1>active</h1>            
         <select class="form-control" id="active" name="active">
         <option value="1">yes</option>

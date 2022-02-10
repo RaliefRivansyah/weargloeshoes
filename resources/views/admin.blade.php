@@ -14,5 +14,6 @@
     <a href="/admin/customnote/show_customnote" class="btn btn-primary">Custom</a>
     {{-- <a href="/admin/show_imageproduct" class="btn btn-primary">imageproduct</a> --}}
     <a href="/admin/show_article" class="btn btn-primary">Article</a>
+    <a href="/order-status" class="btn btn-primary">Orders</a>
 </div>
 @endSection

@@ -101,6 +101,11 @@
                         <li class="nav-item">
                             <a class="nav-link me-4" href="/aboutus">About Us</a>
                         </li>
+                        @if(session()->has('auth'))
+                        <li class="nav-item">
+                            <a class="nav-link me-4" href="{{route('order.status')}}">My Order</a>
+                        </li>
+                        @endif
                     </ul>
                 </div>
              </nav>               

@@ -17,4 +17,9 @@ class product extends Model
         return $this->hasOne('App\Models\imageproduct');
     }
 
+    public function pesanan()
+    {
+        return $this->hasMany(order::class, 'id');
+    }
+
 }

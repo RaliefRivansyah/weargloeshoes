@@ -246,6 +246,10 @@
             <label for="description">description</label>
             <textarea type="text" class="form-control" id="description" style="height: 150px" name="description" >{{($products->description)}}</textarea> 
         </div>
+        <div class="form-group">
+            <label for="Nomor Rekening">No Rekening</label>
+            <input type="text" class="form-control" id="no_rekening" name="no_rekening" value="{{$products->no_rekening}}">
+          </div>
         <h1>active</h1>            
         <select class="form-control" id="active" name="active" value="{{($products->active)}}">
         <option value="1" {{ $products->active == '1' ? 'selected="selected"' : '' }}>yes</option>
