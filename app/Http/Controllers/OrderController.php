@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\order;
 use App\Models\product;
+use App\Mail\OrderAcc;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 class OrderController extends Controller
 {
     public function insertOrder(Request $request, $id)
@@ -104,6 +107,8 @@ class OrderController extends Controller
             $data = order::find($id);
             $data->status = 1;
             $data->save();
+            $customer = User::find($data->user_id);
+            Mail::to($customer->email, 'Weargloeshoes')->send(new OrderAcc($id));
             return redirect()->route('order.status')
             ->with('berhasil', 'Berhasil dikonfirmasi!');
         }else return redirect()->route('order.status')
@@ -116,6 +121,8 @@ class OrderController extends Controller
             $data = order::find($id);
             $data->status = 2;
             $data->save();
+            $customer = User::find($data->user_id);
+            Mail::to($customer->email, 'Weargloeshoes')->send(new OrderAcc($id));
             return redirect()->route('order.status')
             ->with('berhasil', 'Konfirmasi ditolak!');
         }else return redirect()->route('order.status')
@@ -128,6 +135,8 @@ class OrderController extends Controller
             $data = order::find($id);
             $data->status = 1;
             $data->save();
+            $customer = User::find($data->user_id);
+            Mail::to($customer->email, 'Weargloeshoes')->send(new OrderAcc($id)); 
             return redirect()->route('order.status')
             ->with('berhasil', 'Berhasil dikonfirmasi ulang!');
         }else return redirect()->route('order.status')
