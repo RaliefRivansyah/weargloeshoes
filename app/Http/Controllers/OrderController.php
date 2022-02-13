@@ -81,7 +81,7 @@ class OrderController extends Controller
         $path = 'bukti_tf';
         $string = rand(22, 10003);
         if( $photo != NULL){
-            $fileName = $string . '___buktitfmasuk'.$photo->getClientOriginalExtension();
+            $fileName = $string . '___buktitfmasuk.'.$photo->getClientOriginalExtension();
             $photo->move($path, $fileName);
             $data->bukti_tf = $path .'/'. $fileName;
         }
@@ -166,7 +166,7 @@ class OrderController extends Controller
         $path = 'bukti_tf';
         $string = rand(22, 10003);
         if( $photo != NULL){
-            $fileName = $string . '___buktitfmasuk'.$photo->getClientOriginalExtension();
+            $fileName = $string . '___buktitfmasuk.'.$photo->getClientOriginalExtension();
             $photo->move($path, $fileName);
             $data->bukti_tf = $path .'/'. $fileName;
         }
@@ -188,7 +188,7 @@ class OrderController extends Controller
         $path = 'bukti_tf';
         $string = rand(22, 10003);
         if( $photo != NULL){
-            $fileName = $string . '___buktitfmasuk'.$photo->getClientOriginalExtension();
+            $fileName = $string . '___buktitfmasuk.'.$photo->getClientOriginalExtension();
             $photo->move($path, $fileName);
             $data->bukti_tf = $path .'/'. $fileName;
         }
