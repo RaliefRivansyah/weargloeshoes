@@ -54,7 +54,7 @@
 
         </td>
             <td>
-              {{$harga_awal}}
+                Rp. {{number_format($harga_awal, 0, ',', '.')}}
             </td>
             <td>
                 @if($diskon == NULL) 0%
@@ -65,7 +65,7 @@
               {{$quantity}}
             </td>
             <td>
-              {{$total}}
+                Rp. {{number_format($total, 0, ',', '.')}}
             </td>
             <td>
               {!! $alamat !!}
