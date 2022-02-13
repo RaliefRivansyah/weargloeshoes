@@ -71,14 +71,24 @@
 		tinymce.init({
 		selector: '#mytextarea'
 		});
-        // $("#min,#plus").click(function(){
-
-        //     $('#TOTAL').html($('#PRICE').val() * $('#QTY').val());
-
-        // });
+    
+        function addCommas(nStr) {
+            nStr += '';
+            var x = nStr.split('.');
+            var x1 = x[0];
+            var x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            }
+            return x1 + x2;
+        }
         $( document ).ready(function() {
-            $('#TOTAL').html($('#PRICE').val() * $('#QTY').val());
+            var temp = $('#PRICE').val() * $('#QTY').val();
+            $('#TOTAL').html(addCommas(temp));
             $('#total_input').val($('#PRICE').val() * $('#QTY').val());
+            // $('#label_input').val($('#PRICE').val() * $('#QTY').val());
+            
         });
 
         $('.btn-plus, .btn-minus').on('click', function(e) {
@@ -90,8 +100,9 @@
             var x = document.getElementById("QTY").value;
             var y = document.getElementById("PRICE").value;
             var multi = x * y;
-            document.getElementById("TOTAL").innerHTML = multi;
+            
             $('#total_input').val($('#PRICE').val() * $('#QTY').val());
+            $('#TOTAL').html(addCommas(multi));
 
         });
     </script>

@@ -129,8 +129,9 @@
               </button>
               <div class="modal fade" id="bukti_ulang{{$data->id}}" tabindex="-1" aria-hidden="true" aria-labelledby="exampleModalLabel2">
                 <div class="modal-dialog bg-white">
-                  <form method="post" action="{{route('update.orders', ['id' => $data->id])}}" enctype="multipart/form-data">
+                  <form method="post" action="{{route('bukti.ulang.orders', ['id' => $data->id])}}" enctype="multipart/form-data">
                     @csrf
+                    {{method_field('PUT')}}
                 <div class="modal-content bg-white">
                    <div class="modal-header">
                    <h5 class="modal-title" id="exampleModalLabel">Upload Ulang Bukti</h5>
@@ -145,6 +146,10 @@
                   </div>
                    </div>
                    <div class="modal-footer">
+                    <div class="mr-auto w-0">
+                      <button type="submit" onclick="return confirm('Yakin ingin mengirim Bukti Ulang?')" class="btn btn-primary btn-lg">Simpan</button>
+                      <button type="reset" class="btn btn-danger">Reset</button>
+                  </div>
                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                    
                    </div>
@@ -161,6 +166,7 @@
               <div class="modal-dialog">
               <form method="post" action="{{route('update.orders', ['id' => $data->id])}}" enctype="multipart/form-data">
                   @csrf
+                  {{method_field('PUT')}}
               <div class="modal-content">
                  <div class="modal-header">
                  <h5 class="modal-title" id="exampleModalLabel">Edit Detail Order</h5>
@@ -178,7 +184,7 @@
                         <i class="fa fa-minus"></i>
                       </a>
                     </div>
-                    <input value={{$data->quantity}} class="form-control quantity" min="0" id="QTY" name="quantity" type="number" value="1" style="min-width : 25%;"/>
+                    <input value="{{$data->quantity}}" class="form-control quantity" min="0" id="QTY" name="quantity" type="number" value="1" style="min-width : 25%;"/>
                     <div class="input-group-append">
                       <a  class="btn btn-outline-secondary btn-plus" id="plus">
                         <i class="fa fa-plus"></i>
@@ -190,7 +196,7 @@
                 <input type="hidden" id="total_input" name="total_price">    
                       <div class="form-group">
                           <label>Alamat</label>
-                          <textarea class="form-control" name="alamat" value={{$data->alamat}}>{{$data->alamat}}</textarea>
+                          <textarea class="form-control" name="alamat" value="{!! $data->alamat !!}">{!! $data->alamat !!}</textarea>
                       </div>
                      <div class="form-group">
                          <label>Nomor Telepon</label>
@@ -198,12 +204,13 @@
                      </div>
                      <div class="form-group">
                           <label>Bukti Transfer (Silahkan melakukan pembayaran ke Nomor Rekening Berikut : {{$data->product->no_rekening}} )</label>
+                          <small>Kosongi jika Anda tidak mengedit bukti</small>
                           <input type="file" class="form-control" name="bukti_tf">
                       </div>
                  </div>
                  <div class="modal-footer">
                      <div class="mr-auto w-0">
-                         <button type="submit" onclick="return confirm('Yakin ingin melakukan Pembelian?')" class="btn btn-primary btn-lg">Order</button>
+                         <button type="submit" onclick="return confirm('Yakin ingin mengedit Pembelian?')" class="btn btn-primary btn-lg">Update Order</button>
                          <button type="reset" class="btn btn-danger">Reset</button>
                      </div>
                      <label>Total Rp: <h3 id="TOTAL"></h3></label>
@@ -213,9 +220,10 @@
               </form>
               </div>
               </div>
-            <button class="btn btn-danger" type="button" onclick="return confirm('Yakin ingin menghapus data?')">
+</div>
+            <a class="btn btn-danger" href="{{route('order.delete', ['id' => $data->id])}}" onclick="return confirm('Yakin ingin menghapus data?')">
               Hapus
-            </button>
+            </a>
             @elseif($data->status == 1)
             <small>Seller akan segera mengirimkan pesanan Anda</small>
             @endif

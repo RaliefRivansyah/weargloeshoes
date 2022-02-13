@@ -78,12 +78,15 @@ Route::get('/verification/{id}', [SentToMailController::class, 'index']);
 Route::get('/cart',[ OrderController::class, 'getOrder']);
 Route::get('/cart/delete/{id}', [OrderController::class, 'deleteOrder']);
 Route::post('/store-order/{id}', [ OrderController::class, 'order'])->name('store.orders');
-Route::post('/update-order/{id}', [ OrderController::class, 'update'])->name('update.orders');
+Route::put('/update-order/{id}', [ OrderController::class, 'update'])->name('update.orders');
+Route::put('/update-bukti-order/{id}', [ OrderController::class, 'updateBukti'])->name('bukti.ulang.orders');
 Route::get('/order-status', [ OrderController::class, 'index'])->name('order.status');
+Route::get('/order-delete/{id}', [ OrderController::class, 'delete'])->name('order.delete');
 Route::get('/preview/{id}', [ OrderController::class, 'preview'])->name('preview.bukti');
 Route::get('/konfirmasi-order/{id}', [ OrderController::class, 'konfirmAcc'])->name('konfirm.order');
 Route::get('/batal/konfirmasi-order/{id}', [ OrderController::class, 'konfirmDec'])->name('batal.konfirm.order');
 Route::get('/ulang/konfirmasi-order/{id}', [ OrderController::class, 'konfirmAgain'])->name('ulang.konfirm.order');
+Route::get('/reset', [ OrderController::class, 'reset'])->name('order.reset');
 
 Route::get('/login', function () {
     return view('pages.login');

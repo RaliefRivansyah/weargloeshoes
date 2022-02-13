@@ -244,7 +244,7 @@
                     {{-- <h3 id="afterprice" class="py-2">Rp. {{$products->price*($products->discount/100)}}<span style="text-decoration: line-through">Rp. {{$products->price}}</span></h3> --}}
                     <h3 id="price" class="py-2" style="text-decoration: line-through">Rp. {{ number_format($products->price, 0, ',', '.') }}</h3>
                     {{-- <span style="text-decoration: line-through">Rp. {{$products->price}}</span> --}}
-                    <h3 id="afterprice" class="py-2">Rp. {{number_format($products->price-($products->price*($products->discount/100)), 0, ',', '.')}}</h3>
+                    <h3 id="afterprice" class="py-2">Rp. {{number_format($products->price_after_discount, 0, ',', '.')}}</h3>
                     <h2 class="py-2">({{$products->discount}}% Off)</h2>
                     @endif
                     {{-- <h2 class="py-2">2 OTHER AVAILABLE OPTIONS</h2> --}}
@@ -380,8 +380,8 @@
                                   </div>
                                     </div>
                               </div>
-                              <input type="hidden" id="PRICE" name="price_now" value="{{$products->price-($products->price*($products->discount/100))}}">
-                              <input type="hidden" id="total_input" name="total_price">    
+                              <input type="hidden" id="PRICE" name="price_now" value="{{$products->price_after_discount}}">
+                              <input type="hidden" id="total_input" name="total_price">   
                                     <div class="form-group">
                                         <label>Alamat</label>
                                         <textarea class="form-control" name="alamat"></textarea>

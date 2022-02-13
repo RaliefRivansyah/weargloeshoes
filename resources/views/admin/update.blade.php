@@ -240,8 +240,13 @@
         </div>
         <div class="form-group">
             <label for="discount">discount</label>
-            <input type="number" class="form-control" id="discount" name="discount" min="1" max="50" value="{{($products->discount)}}">
-        </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">%</span>
+              </div>
+              <input type="number" class="form-control" placeholder="Discount" name="discount" aria-label="Discount" value="{{$products->discount}}" aria-describedby="basic-addon1">
+            </div>
+          </div>
         <div class="form-group">
             <label for="description">description</label>
             <textarea type="text" class="form-control" id="description" style="height: 150px" name="description" >{{($products->description)}}</textarea> 

@@ -133,4 +133,73 @@ class OrderController extends Controller
         }else return redirect()->route('order.status')
         ->with('gagal', 'Tidak ada akses!');
     }
+
+    public function update($id, Request $request)
+    { 
+        $request->validate([
+            'quantity' => 'required',
+            'price_now' => 'required',
+            'total_price' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required'
+        ]);
+        $data = order::find($id);
+        $product = product::find($data->product_id);
+        $data->user_id =  session()->get('auth')->id;
+        // $data->product_id = $id;
+        $data->product_image = asset('images/'.$product->product_image);
+        $data->quantity = $request->quantity;
+        $data->price_now = $request->price_now;
+        $data->total_price = $request->total_price;
+        $data->alamat = $request->alamat;
+        $data->no_telp = $request->no_telp;
+        $photo = $request->file('bukti_tf');
+        $path = 'bukti_tf';
+        $string = rand(22, 10003);
+        if( $photo != NULL){
+            $fileName = $string . '___buktitfmasuk'.$photo->getClientOriginalExtension();
+            $photo->move($path, $fileName);
+            $data->bukti_tf = $path .'/'. $fileName;
+        }
+        $data->save();
+        return redirect()->route('order.status')
+        ->with('berhasil', 'Pesananmu berhasil diedit, Harap Menunggu untuk konfirmasi Seller!');
+
+    }
+
+    public function updateBukti($id, Request $request)
+    { 
+        $request->validate([
+            'bukti_tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp,heic,heif,hevc,pdf|max:50048'
+        ]);
+        $data = order::find($id);
+        $product = product::find($data->product_id);
+        $data->user_id =  session()->get('auth')->id;
+        $photo = $request->file('bukti_tf');
+        $path = 'bukti_tf';
+        $string = rand(22, 10003);
+        if( $photo != NULL){
+            $fileName = $string . '___buktitfmasuk'.$photo->getClientOriginalExtension();
+            $photo->move($path, $fileName);
+            $data->bukti_tf = $path .'/'. $fileName;
+        }
+        $data->status = 0;
+        $data->save();
+        return redirect()->route('order.status')
+        ->with('berhasil', 'Bukti ulang berhasil diedit, Harap Menunggu untuk konfirmasi Seller!');
+
+    }
+
+    public function delete($id)
+    {
+        order::find($id)->delete();
+        return redirect()->route('order.status')
+            ->with('berhasil', 'Berhasil dihapus!');
+    }
+
+    public function reset()
+    {
+        order::truncate();
+        echo "sukses reset";
+    }
 }

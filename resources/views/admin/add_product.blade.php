@@ -150,8 +150,13 @@
                 <input type="text" class="form-control" id="price" name="price">
         </div>
         <div class="form-group">
-                <label for="discount">discount</label>
-                <input type="number" class="form-control" id="discount" name="discount"  min="1" max="50">
+          <label for="discount">discount</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">%</span>
+            </div>
+            <input type="number" class="form-control" name="discount" placeholder="Discount" aria-label="Discount" aria-describedby="basic-addon1">
+          </div>
         </div>
         <div class="form-group">
                 <label for="description">Description</label>

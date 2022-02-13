@@ -22,6 +22,9 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
+        $temp = $request->discount;
+        $diskon = $temp / 100;
+        $harga = $diskon * $request->price;
         $id = DB::table('products')->insertGetId([
             'product_name' => $request->product_name,
             'product_type' => $request->product_type,
@@ -29,6 +32,7 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'discount' => $request->discount,
+            'price_after_discount' => $request->price - $harga,
             'colour' => $request->colour,
             'heel_height' => $request->heel_height,
             'active' => $request->active,
@@ -155,8 +159,9 @@ dd($request);
         //     $tujuan_upload = 'images';
         //     $namafoto = time() . '.' . $file->getClientOriginalExtension();
         //     $file->move($tujuan_upload, $namafoto);
-
-
+            $temp = $request->discount;
+            $diskon = $temp / 100;
+            $harga = $diskon * $request->price;
             DB::table('products')->where('id', $request->id)->update([
                 'product_name' => $request->product_name,
                 'product_type' => $request->product_type,
@@ -164,6 +169,7 @@ dd($request);
                 'description' => $request->description,
                 'price' => $request->price,
                 'discount' => $request->discount,
+                'price_after_discount' => $request->price - $harga,
                 'colour' => $request->colour,
                 'heel_height' => $request->heel_height,
                 'no_rekening' => $request->no_rekening,
