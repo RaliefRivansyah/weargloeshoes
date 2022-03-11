@@ -74,9 +74,38 @@
             </div>
             <div class="col-6 kanan d-flex align-items-center justify-content-end header__link">
                 @if (Session::has('success'))
-                    <a href="/logout" class="me-4">Logout</a>
+                    {{-- <a href="/logout" class="me-4">Logout</a> --}}
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown"
+                           class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <div class="d-sm-none d-lg-inline-block">
+                                Hi, {{Session::get('nama')}}</div>
+                        </a>
+            
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-title">
+                                {{-- Welcome, {{Session::get('nama')}}</div> --}}
+                            <a class="dropdown-item has-icon text-primary" href="#"
+                            onclick="event.preventDefault(); localStorage.clear();  document.getElementById('email-form').submit();">
+                                <i class="fa fa-user"></i> Change Email</a>
+                                <form id="email-form" action="{{ url('/reset-email') }}" method="POST" class="d-none">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="email" value="{{Session::get('email')}}">
+                                </form>
+                            <a href="/logout" class="dropdown-item has-icon text-danger"
+                               onclick="event.preventDefault(); localStorage.clear();  document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="GET" class="d-none">
+                                {{ csrf_field() }}
+                            </form>
+                        </div>
+                    </li>
+                
                 @else
-                    <a href="/login-register" class="me-4">login</a>
+
+                    <a href="/login-register" class="me-4">Login</a>
+                    
                 @endif
     
                 {{-- <a href="#" class="me-4">Search</a>

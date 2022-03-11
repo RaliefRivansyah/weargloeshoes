@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\URL;
 
-class Resetpwd extends Mailable
+class Resetemail extends Mailable
 {
     use Queueable, SerializesModels;
     private $nama, $id, $token;
@@ -39,16 +39,14 @@ class Resetpwd extends Mailable
             );
         });
         $this->from("antoniusekoputranto987@gmail.com", "Weargloeshoes")
-            ->view('resetpwd')
+            ->view('resetemail')
             ->with(
                 [
                     'nama' => $this->nama,
                     'website' => "weargloeshoes.com",
-                    'link' => URL::to('/reset-password/' .$this->token),
-                    'token' => $this->token,
-                    'id' => $this->id
+                    'link' => URL::to('/reset-email/' . $this->token)
                 ]
-            )->subject("Weargloeshoes Forgot Password");
+            )->subject("Weargloeshoes Reset Email");
         return $this;
     }
 }

@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 use illuminate\Validation\Rule;
 use App\Mail\SentToEmail;
 use App\Mail\Resetpwd;
+use App\Mail\Resetemail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
+Use Session;
 
 class AuthController extends Controller
 {
@@ -90,6 +92,10 @@ class AuthController extends Controller
                 session(['success' => true]);
                 session(['user' => $logUser]);
                 session(['auth' => $login]);
+                Session::put('nama', $logUser);
+                Session::put('email', $log->email);
+                // dd($logUser);
+               
                 // $userSession = $request->session->put('user', $log->nama);
                 return redirect('/');
                 // return ($log->email);
@@ -148,15 +154,39 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|email'
         ]);
+        //Generate a random string.
+        $token = openssl_random_pseudo_bytes(16);
+        //Convert the binary data into hexadecimal representation.
+        $token = bin2hex($token);
         $data = User::where('email', $request->email)->first();
         if(!empty($data)){
-            $token = Hash::make($request->email);
+            // $token = Hash::make($request->email);
             $data->token = $token;
             $data->save();
             Mail::to($request->email, 'Weargloeshoes')->send(new Resetpwd($data->nama, $data->id, $token));
             return redirect()->route('password.request')
             ->with('status', 'Link Reset Password Telah Dikirim, Silahkan Cek Email Kamu!');
         }else return redirect()->route('password.request')->with('errors', 'Email Kamu Belum Terdaftar!');
+    }
+
+    public function ResetEmail(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+        //Generate a random string.
+        $token = openssl_random_pseudo_bytes(16);
+        //Convert the binary data into hexadecimal representation.
+        $token = bin2hex($token);
+        $data = User::where('email', $request->email)->first();
+        if(!empty($data)){
+            // $token = Hash::make($data->nama);
+            $data->token = $token;
+            $data->save();
+            Mail::to($request->email, 'Weargloeshoes')->send(new Resetemail($data->nama, $data->id, $token));
+            return redirect()->route('/')
+            ->with('emailsent', 'Link Reset Email Telah Dikirim, Silahkan Cek Email Kamu!');
+        }else return redirect()->route('/')->with('emailnotsent', 'Reset Email Gagal');
     }
 
     public function SubmitResetPwd(Request $request)
@@ -167,11 +197,27 @@ class AuthController extends Controller
             'password_confirmation' => 'required|min:8|same:password'
         ]);
 
-        $data = User::where('id', $request->id)->where('token', $request->token)->first();
+        $data = User::where('token', $request->token)->first();
         if(!empty($data)){
             $data->password = Hash::make($request->password_confirmation);
             $data->save();
             $request->session()->flash('register', 'Password Berhasil Diupdate! Silahkan Login menggunakan Password terbaru!');
+            // return redirect('login');
+            return redirect('login');
+        }else return redirect()->route('password.reset')->with('errors', 'Data yang Kamu masukkan Salah!');
+    }
+
+    public function SubmitResetEmail(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+
+        $data = User::where('token', $request->token)->first();
+        if(!empty($data)){
+            $data->email = $request->email;
+            $data->save();
+            $request->session()->flash('register', 'Email Berhasil Diupdate! Silahkan Login menggunakan Email terbaru!');
             // return redirect('login');
             return redirect('login');
         }else return redirect()->route('password.reset')->with('errors', 'Data yang Kamu masukkan Salah!');

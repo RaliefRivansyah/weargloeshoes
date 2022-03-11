@@ -45,10 +45,18 @@ Route::get('/forgot-password', function () {
     return view('auth.passwords.email');
 })->middleware('guest')->name('password.request');
 
-Route::get('/reset-password/{id}/{token}', function ($id, $token) {
-    return view('auth.passwords.reset', ['id' => $id, 'token' => $token]);
+Route::get('/reset-password/{token}', function ($token) {
+    return view('auth.passwords.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
 Route::post('/update-password', [ AuthController::class, 'SubmitResetPwd'])->middleware('guest')->name('password.update');
+
+Route::post('/reset-email', [ AuthController::class, 'ResetEmail']);
+Route::get('/reset-email/{token}', function ($token) {
+    return view('auth.email.reset', ['token' => $token]);
+})->middleware('guest')->name('email.reset');
+Route::post('/update-email', [ AuthController::class, 'SubmitResetEmail'])->middleware('guest')->name('email.update');
+
+
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
@@ -66,7 +74,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 
-Route::get('/', [ homecontroller::class, 'index']);
+Route::get('/', [ homecontroller::class, 'index'])->name('/');
 
 Route::get('/verification/{id}', [SentToMailController::class, 'index']);
 // function () {
