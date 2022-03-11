@@ -41,7 +41,7 @@ class OrderDec extends Mailable
         $order = order::find($this->id);
         $products = product::find($order->product_id);
         $user = User::find($order->user_id);
-        $this->from("antoniusekoputranto987@gmail.com", "Weargloeshoes")
+        $this->from("gloeshoesleather@gmail.com", "Weargloeshoes")
             ->view('orderconfirm')
             ->with(
                 [

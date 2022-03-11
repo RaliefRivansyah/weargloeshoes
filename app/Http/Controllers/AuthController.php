@@ -128,6 +128,7 @@ class AuthController extends Controller
             if (Hash::check($request->password, $log->password)) {
                 session(['admin' => true]);
                 session(['auth' => $log]);
+                session(['success' => true]);
                 return redirect('/admin');
             }
         }

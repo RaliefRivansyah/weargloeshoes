@@ -37,7 +37,7 @@ class SentToEmail extends Mailable
                 'Weargloeshoes', 'Official Email'
             );
         });
-        $this->from("antoniusekoputranto987@gmail.com", "Weargloeshoes")
+        $this->from("gloeshoesleather@gmail.com", "Weargloeshoes")
             ->view('email')
             ->with(
                 [

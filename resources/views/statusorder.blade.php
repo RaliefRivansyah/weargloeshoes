@@ -44,6 +44,9 @@
             <th>No.Rekening Seller</th>
             <th>Bukti</th>
             <th>Aksi</th>
+            @if(session()->get('auth')->level == 1)
+            <th>Hapus</th>
+            @endif
         </tr>
         </thead>
         @if(!empty($payment))
@@ -236,8 +239,13 @@
             @elseif($data->status == 2)
               <a href="{{route('ulang.konfirm.order', ['id' => $data->id])}}" class="btn btn-warning" onclick="return confirm('Yakin ingin mengkonfirmasi Ulang?')">Konfirmasi Ulang</a>
             @endif
-          @endif
+          @endif 
         </td>
+        @if(session()->get('auth')->level == 1)
+        <td>
+          <a href="{{route('order.delete', ['id' => $data->id])}}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus Order?')">Hapus Order</a>
+        </td>
+        @endif
     </tr>   
     <tbody>
       @endforeach

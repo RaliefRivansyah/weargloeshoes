@@ -621,7 +621,7 @@
 		<section id="about-us">
 			<div class="container mt-5">
 				<h1 class="judul">ABOUT US</h1>
-				<p class="mx-5 mb-5 text-justify">{!! $accounts->description_company !!}}</p>
+				<p class="mx-5 mb-5 text-justify">{!! $accounts->description_company !!}</p>
 			</div>
 		</section>
 		

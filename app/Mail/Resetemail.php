@@ -38,7 +38,7 @@ class Resetemail extends Mailable
                 'Weargloeshoes', 'Official Email'
             );
         });
-        $this->from("antoniusekoputranto987@gmail.com", "Weargloeshoes")
+        $this->from("gloeshoesleather@gmail.com", "Weargloeshoes")
             ->view('resetemail')
             ->with(
                 [
