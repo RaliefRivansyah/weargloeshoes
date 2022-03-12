@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 13 Jan 2022 pada 00.48
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 8.0.13
+-- Host: 127.0.0.1:3306
+-- Generation Time: Mar 12, 2022 at 03:13 AM
+-- Server version: 10.5.13-MariaDB-cll-lve
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `weargloeshoes`
+-- Database: `u423984510_weargloeshoes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `accounts`
+-- Table structure for table `accounts`
 --
 
 CREATE TABLE `accounts` (
@@ -40,16 +40,16 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `accounts`
+-- Dumping data for table `accounts`
 --
 
 INSERT INTO `accounts` (`id`, `description_company`, `link_whatsapp`, `link_facebook`, `link_instagram`, `link_tokopedia`, `link_shopee`, `created_at`, `updated_at`) VALUES
-(3, 'Sepatu handmade berbahan kulit asli dengan di lengkapi anti jamur dan bebas kanker,\r\nBebas custom model apa saja dengan tingkat kemiripan 90-99% bahkan bisa lebih bagus\r\nLangsung di produksi oleh pengrajin- pengrajin kami dengan detail yang sangat rapi dan teliti ( handmade )\r\nLining / bagian dalam sepatu yang lembut dan hangat sangat cocok di pakai untuk winter dan autumn\r\n\r\nMemberikan garansi reparasi 1 tahun untuk semua produk sepatu kulit kami\r\nSol sepatu terbuat dari bahan rubber/karet anti slip\r\nBisa request ukuran sangat besar, bisa menyesuaikan bentuk kaki dan lebar kaki', '85856577395', 'https://www.facebook.com/gloeshoes.leather/', 'https://www.instagram.com/gloeshoes.leather/', 'https://www.tokopedia.com/goodshoesleather', 'https://shopee.co.id/gloeshoes.leather', '2021-07-26 04:21:51', '2021-08-11 00:34:01');
+(3, '<p>Sepatu handmade berbahan kulit asli dengan di lengkapi anti jamur dan bebas kanker, Bebas custom model apa saja dengan tingkat kemiripan 90-99% bahkan bisa lebih bagus Langsung di produksi oleh pengrajin- pengrajin kami dengan detail yang sangat rapi dan teliti ( handmade ) Lining / bagian dalam sepatu yang lembut dan hangat sangat cocok di pakai untuk winter dan autumn Memberikan garansi reparasi 1 tahun untuk semua produk sepatu kulit kami Sol sepatu terbuat dari bahan rubber/karet anti slip Bisa request ukuran sangat besar, bisa menyesuaikan bentuk kaki dan lebar kaki</p>', '85856577395', 'https://www.facebook.com/gloeshoes.leather/', 'https://www.instagram.com/gloeshoes.leather/', 'https://www.tokopedia.com/gloeshoes.leather/', 'https://shopee.co.id/gloeshoes.leather', '2021-07-26 04:21:51', '2022-03-08 14:51:30');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `articles`
+-- Table structure for table `articles`
 --
 
 CREATE TABLE `articles` (
@@ -63,7 +63,7 @@ CREATE TABLE `articles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `articles`
+-- Dumping data for table `articles`
 --
 
 INSERT INTO `articles` (`id`, `title`, `image_article`, `contents`, `active`, `created_at`, `updated_at`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `articles` (`id`, `title`, `image_article`, `contents`, `active`, `c
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customerservices`
+-- Table structure for table `customerservices`
 --
 
 CREATE TABLE `customerservices` (
@@ -88,7 +88,7 @@ CREATE TABLE `customerservices` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `customerservices`
+-- Dumping data for table `customerservices`
 --
 
 INSERT INTO `customerservices` (`id`, `image`, `description_customer_service`, `active`, `created_at`, `updated_at`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `customerservices` (`id`, `image`, `description_customer_service`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customnotes`
+-- Table structure for table `customnotes`
 --
 
 CREATE TABLE `customnotes` (
@@ -112,7 +112,7 @@ CREATE TABLE `customnotes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `customnotes`
+-- Dumping data for table `customnotes`
 --
 
 INSERT INTO `customnotes` (`id`, `description_note`, `active`, `created_at`, `updated_at`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `customnotes` (`id`, `description_note`, `active`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customtestimonies`
+-- Table structure for table `customtestimonies`
 --
 
 CREATE TABLE `customtestimonies` (
@@ -133,7 +133,7 @@ CREATE TABLE `customtestimonies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `customtestimonies`
+-- Dumping data for table `customtestimonies`
 --
 
 INSERT INTO `customtestimonies` (`id`, `image_testimony`, `active`, `created_at`, `updated_at`) VALUES
@@ -145,7 +145,7 @@ INSERT INTO `customtestimonies` (`id`, `image_testimony`, `active`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `events`
+-- Table structure for table `events`
 --
 
 CREATE TABLE `events` (
@@ -158,7 +158,7 @@ CREATE TABLE `events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `events`
+-- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `image_event`, `link`, `active`, `created_at`, `updated_at`) VALUES
@@ -171,7 +171,7 @@ INSERT INTO `events` (`id`, `image_event`, `link`, `active`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `feeds`
+-- Table structure for table `feeds`
 --
 
 CREATE TABLE `feeds` (
@@ -184,7 +184,7 @@ CREATE TABLE `feeds` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `feeds`
+-- Dumping data for table `feeds`
 --
 
 INSERT INTO `feeds` (`id`, `image_feed`, `link`, `active`, `created_at`, `updated_at`) VALUES
@@ -200,7 +200,7 @@ INSERT INTO `feeds` (`id`, `image_feed`, `link`, `active`, `created_at`, `update
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `imageproducts`
+-- Table structure for table `imageproducts`
 --
 
 CREATE TABLE `imageproducts` (
@@ -215,7 +215,7 @@ CREATE TABLE `imageproducts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `imageproducts`
+-- Dumping data for table `imageproducts`
 --
 
 INSERT INTO `imageproducts` (`id`, `thumbnail`, `product`, `image_product_1`, `image_product_2`, `image_product_3`, `created_at`, `updated_at`) VALUES
@@ -295,13 +295,13 @@ INSERT INTO `imageproducts` (`id`, `thumbnail`, `product`, `image_product_1`, `i
 (87, 1, 130, '1628858764.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-10 10:58:37'),
 (88, 1, 131, '1628858811.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-12 14:18:45'),
 (89, 1, 132, '1628858871.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-12 14:18:34'),
-(90, 1, 133, '1628858924.jpg', NULL, NULL, '2021-11-06 01:18:03', '2021-11-12 14:18:16'),
-(91, 1, 134, '1628858974.jpg', '1636565048.02.jpg', NULL, '2021-11-06 01:18:03', '2022-01-04 00:55:39');
+(90, 1, 133, '1628858924.jpg', NULL, NULL, '2021-11-06 01:18:03', '2022-02-15 19:27:04'),
+(91, 1, 134, '1628858974.jpg', '1636565048.02.jpg', NULL, '2021-11-06 01:18:03', '2022-02-15 19:26:13');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -311,7 +311,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -344,22 +344,36 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_image` varchar(10000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `price_now` int(11) NOT NULL,
+  `total_price` int(11) NOT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_telp` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bukti_tf` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0 COMMENT '0 = belum dikonfirmasi, 1= konfirmasi diterima(bukti tf sah),\r\n2=konfirmasi ditolak(bukti tf tidak sah)',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `product_id`, `product_image`, `quantity`, `price_now`, `total_price`, `alamat`, `no_telp`, `bukti_tf`, `status`, `created_at`, `updated_at`) VALUES
+(4, 27, 133, 'http://weargloeshoes.com/images/1628858924.jpg', 1, 393750, 393750, '<p>mlg rw 1 rt 6&nbsp;</p>', '082131163139', 'bukti_tf/7663___buktitfmasuk.jpg', 0, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `productcolourimages`
+-- Table structure for table `productcolourimages`
 --
 
 CREATE TABLE `productcolourimages` (
@@ -373,7 +387,7 @@ CREATE TABLE `productcolourimages` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -384,93 +398,95 @@ CREATE TABLE `products` (
   `product_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` int(11) NOT NULL,
   `discount` int(11) DEFAULT NULL,
+  `price_after_discount` int(11) DEFAULT NULL,
   `colour` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `heel_height` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_rekening` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `active` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `products`
+-- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `product_name`, `product_type`, `featured`, `product_image`, `price`, `discount`, `colour`, `heel_height`, `description`, `active`, `created_at`, `updated_at`) VALUES
-(60, 'Sepatu Kulit Wanita Handwoven', 'flat', 'n', '1628231052.jpg', 500000, NULL, 'warna bisa request sendiri', 'Sedang', 'handwoven flat ( pre order ) \r\n- wajib cantumkan warna dan ukuran\r\n- ukur panjang telapak kaki dengan penggaris\r\n\r\nbahan : kulit asli (mill natural)\r\noutsole : karet\r\nsize : 36-42\r\n\r\nharga 500K\r\n\r\ngaransi reparasi 1 tahun', 1, '2021-08-05 23:24:12', NULL),
-(61, 'Sepatu Boot Kulit Asli - bannera boot', 'wedges', 'n', '1628231140.jpg', 550000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-05 23:25:40', NULL),
-(62, 'Sepatu Boots Kulit - Lodie Boot', 'boots', 'n', '1628231267.jpg', 575000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-05 23:27:47', NULL),
-(63, 'Sepatu Kulit Asli - Sling Basic', 'heels', 'n', '1628231376.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-05 23:29:36', NULL),
-(64, 'Sepatu Kulit Asli - Handwoven Hells', 'flat', 'n', '1628231464.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-05 23:31:04', NULL),
-(65, 'Sepatu Kulit Asli - Ivory Oxford', 'wedges', 'n', '1628231627.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-05 23:33:47', NULL),
-(66, 'Sepatu Kulit Asli - Lesha Heels', 'boots', 'n', '1628318113.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nSize Chart  ( Panjang telapak kaki )\r\n35 : 20cm\r\n36 : 21cm\r\n37 : 22cm\r\n38 : 23cm\r\n39 : 24cm\r\n40 : 25cm\r\n41 : 26cm\r\n42 : 27cm', 1, '2021-08-06 23:35:13', NULL),
-(67, 'Sepatu Kulit Asli - Mina Heels', 'heels', 'n', '1628318405.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-06 23:40:05', NULL),
-(68, 'Sepatu Boot Kulit Asli - Noemi Boots', 'flat', 'n', '1628318495.jpg', 625000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-06 23:41:35', NULL),
-(69, 'Sepatu Boot Kulit Asli - Mira Boot', 'wedges', 'n', '1628318705.jpg', 525000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-06 23:45:05', NULL),
-(70, 'Sepatu Boot Kulit Asli - Jodie Boots', 'boots', 'n', '1628318851.jpg', 575000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-06 23:47:31', NULL),
-(71, 'Sepatu Kulit Asli - Goodshoes Leather - Teya Dunlup/Wedges', 'heels', 'n', '1628319149.jpg', 450000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-06 23:52:29', NULL),
-(72, 'Sepatu Heels Kulit - Goodshoes Leather - Lula Heels', 'flat', 'n', '1628319725.jpg', 475000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-07 00:02:05', NULL),
-(73, 'Sepatu Heels Kulit - Goodshoes Leather - Lesha Stiletto Heels 9cm', 'wedges', 'n', '1628319828.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-07 00:03:48', NULL),
-(74, 'Sepatu Kulit Wanita - Goodshoes Leather - Dione Wedges', 'boots', 'n', '1628320176.jpg', 450000, NULL, 'Bisa costum sendiri', 'Sedang', 'Sepatu Kulit Wanita - Goodshoes Leather - Dione Wedges', 1, '2021-08-07 00:09:36', NULL),
-(75, 'Sepatu Kulit Wanita - Goodshoes Leather - Tzuna Woven', 'heels', 'n', '1628320296.jpg', 575000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-07 00:11:36', NULL),
-(76, 'Sepatu Heels Kulit - Gloeshoes Leather - Hana Heel', 'flat', 'n', '1628320444.jpg', 475000, NULL, 'Bisa costum sediri', 'Rendah', 'sepatu heels kulit asli', 1, '2021-08-07 00:14:04', NULL),
-(77, 'tali kulit', 'wedges', 'n', '1628320627.jpg', 35000, NULL, 'tidak ada', 'tidak ada', 'tali kulit asli panjang 70cm', 1, '2021-08-07 00:17:07', NULL),
-(78, 'Sepatu boot kulit - Goodshoes Leather - Donna Boot 7cm', 'boots', 'n', '1628320696.jpg', 550000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-07 00:18:16', NULL),
-(79, 'Sepatu Kulit Wanita - Goodshoes Leather - Tassel flat', 'heels', 'n', '1628320763.jpg', 450000, NULL, 'Bisa costum', 'Rendah', 'Sepatu Kulit Wanita - Goodshoes Leather - Tassel flat', 1, '2021-08-07 00:19:23', NULL),
-(80, 'Sepatu Wanita Kulit - Goodshoes Leather - Diona Wooden Wedges', 'flat', 'n', '1628320930.jpg', 475000, NULL, 'Bisa costum', 'Rendah', 'Sepatu Wanita Kulit - Goodshoes Leather - Diona Wooden Wedges', 1, '2021-08-07 00:22:10', NULL),
-(81, 'sepatu wanita kulit - Gloeshoes Leather- Docmart Low Wanita', 'wedges', 'n', '1628321095.jpg', 500000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-07 00:24:55', NULL),
-(82, 'Sepatu Wanita Kulit-Gloeshoes Leather-Madoka Woven', 'boots', 'n', '1628321186.jpg', 515000, NULL, 'Bisa custom', 'Rendah', 'Sepatu  Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-07 00:26:26', NULL),
-(83, 'Sepatu Wanita Kulit-Gloeshoes Leather-Chelsea Boots', 'heels', 'n', '1628321335.jpg', 550000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:28:55', NULL),
-(84, 'Sepatu Wanita Kulit-Gloeshoes Leather-Ribbon Dunlup', 'flat', 'n', '1628321423.jpg', 425000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:30:23', NULL),
-(85, 'Sepatu Heel Kulit - Gloeshoes Leather - Alika Wooden Heels', 'wedges', 'n', '1628321539.jpg', 470050, NULL, 'Bisa costum', 'Sedang', 'Sepatu Heel Kulit - Gloeshoes Leather - Alika Wooden Heels', 1, '2021-08-07 00:32:19', NULL),
-(86, 'Mila Boot - Gloeshoee Leather', 'boots', 'n', '1628321630.jpg', 475000, NULL, 'Bisa costum', 'Rendah', 'Mila Boot - Gloeshoee Leather', 1, '2021-08-07 00:33:50', NULL),
-(87, 'Sepatu Wanita Kulit - Gloeshoes Leather - Neida Handwoven', 'heels', 'n', '1628321751.jpg', 450000, NULL, 'Bisa custom', 'Rendah', 'Warna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:35:51', NULL),
-(88, 'Sepatu Boot Kulit - Gloeshoes Leather - Millan Boot', 'flat', 'n', '1628321924.jpg', 450000, NULL, 'Bisa costum', 'Rendah', 'Sepatu Boot Kulit - Gloeshoes Leather - Millan Boot', 1, '2021-08-07 00:38:44', NULL),
-(89, 'Sepatu Boot Kulit - Gloeshoes Leather - Alica Boot', 'wedges', 'n', '1628322011.jpg', 600000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:40:11', NULL),
-(90, 'Sepatu Heels Kulit Wanita - Gloeshoes Leather - Sling Basic Sandals', 'boots', 'n', '1628322115.jpg', 425000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:41:55', NULL),
-(91, 'Sepatu Heels Kulit Wanita - Gloeshoes Leather - Lesha Heels Platform', 'heels', 'n', '1628322323.jpg', 450000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:45:23', NULL),
-(92, 'Sepatu Kulit Wanita - Gloeshoes Leather - Oxford tree Colour', 'flat', 'n', '1628322539.jpg', 450000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:48:59', NULL),
-(93, 'Sepatu Boots Kulit Wanita - Gloeshoes Leather - High Boots', 'wedges', 'n', '1628322657.jpg', 875000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:50:57', NULL),
-(94, 'Sepatu Heels Kulit Wanita - Gloeshoes Leather - Luna Heels', 'boots', 'n', '1628322752.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:52:32', NULL),
-(95, 'Sepatu Kulit Wanita - Gloeshoes Leather - Lula Platform', 'heels', 'n', '1628322870.jpg', 475000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 00:54:30', NULL),
-(96, 'Sepatu Boots Kulit Wanita - Gloeshoes Leather - Donna Boots', 'flat', 'n', '1628323986.jpg', 550000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 01:13:06', NULL),
-(97, 'Sepatu Kulit Wanita - Gloeshoes Leather - Belt Mules Platform', 'wedges', 'n', '1628324803.jpg', 500000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-07 01:26:43', NULL),
-(104, 'Sepatu Wanita Kulit - Gloeshoes Leather - Loodie Heels Boots', 'boots', 'n', '1628849308.jpg', 550000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 03:08:28', NULL),
-(105, 'Sepatu Kulit Wanita - Gloeshoes Leather - Nuela Mules', 'heels', 'n', '1628857074.jpg', 475000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:17:54', NULL),
-(106, 'Sepatu Kulit Wanita - Gloeshoes Leather - Alesta Heels', 'flat', 'n', '1628857136.jpg', 475000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:18:56', NULL),
-(107, 'Sepatu Kulit Wanita - Gloeshoes Leather - Tassel Shoes', 'wedges', 'n', '1628857204.jpg', 395000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:20:04', NULL),
-(108, 'Sepatu Wanita Kulit - Gloeshoes Leather - Lula Woden Heels', 'boots', 'n', '1628857255.jpg', 475000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:20:55', NULL),
-(109, 'Sepatu Wanita Kulit - Gloeshoes Leather - Lova Oxford', 'heels', 'n', '1628857331.jpg', 475000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:22:11', NULL),
-(110, 'Sepatu Wanita Kulit - Gloedshoes Leather - Black Handwoven', 'flat', 'n', '1628857400.jpg', 575000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:23:20', NULL),
-(111, 'Sepatu Wanita Kulit - Gloeshoes Leather - Belt Moules Dunlup', 'wedges', 'n', '1628857457.jpg', 425000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:24:17', NULL),
-(112, 'Sepatu Wanita Kulit - Gloeshoes Leather - Nami Heels Boots', 'boots', 'n', '1628857520.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 0, '2021-08-13 05:25:20', NULL),
-(113, 'Sepatu Wanita Kulit - Gloeshoes Leather - Mimi Colour', 'heels', 'n', '1628857594.jpg', 350000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 0, '2021-08-13 05:26:34', NULL),
-(114, 'Sepatu Wanita Kulit - Gloeshoes Leather - Alana Shoes', 'flat', 'n', '1628857661.jpg', 500000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 0, '2021-08-13 05:27:41', NULL),
-(115, 'Sepatu Wanita Kulit - Gloeshoes Leather - Sabrina Heels', 'wedges', 'n', '1628857728.jpg', 575000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 0, '2021-08-13 05:28:48', NULL),
-(116, 'Sepatu Wanita Kulit - Gloeshoes Leather - Kay Shoes', 'boots', 'n', '1628857792.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 0, '2021-08-13 05:29:52', NULL),
-(117, 'Sepatu Wanita Kulit - Gloeshoes Leather - Nivia Platsform', 'heels', 'n', '1628857849.jpg', 500000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 0, '2021-08-13 05:30:49', NULL),
-(118, 'Sepatu Wanita Kulit - Gloeshoes Leather - Milano Woven', 'flat', 'n', '1628857935.jpg', 500000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:32:15', NULL),
-(119, 'Sepatu Wanita Kulit - Gloeshoes Leather - Hana Heels', 'wedges', 'n', '1628858054.jpg', 450000, NULL, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:34:14', NULL),
-(120, 'Sepatu Wanita Kulit-Gloeshoes Leather-Mila boot in black', 'boots', 'n', '1628858133.jpg', 525000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:35:33', NULL),
-(121, 'Sepatu Kulit Gloeshoes Leather - Luna Heels', 'heels', 'n', '1628858181.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-13 05:36:21', NULL),
-(122, 'Sepatu Heels Kulit - Gloeshoes Leather - Madoka Heels', 'flat', 'n', '1628858248.jpg', 515000, NULL, 'Warna bisa request sendiri', 'Sedang', 'Sepatu Heels Kulit - Gloeshoes Leather - Madoka Heels', 1, '2021-08-13 05:37:28', NULL),
-(123, 'Sepatu Kulit Wanita - Gloeshoes Leather - Mira Oxford', 'wedges', 'n', '1628858301.jpg', 450000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-13 05:38:21', NULL),
-(124, 'Pelunasan pesanan sepatu boot a.n Shaviera', 'boots', 'n', '1628858374.jpg', 275000, NULL, 'Warna bisa request sendiri', 'Sedang', 'Pelunasan pesanan sepatu boot a.n Shaviera', 1, '2021-08-13 05:39:34', NULL),
-(125, 'Sepatu Wanita Kulit - Gloeshoes Leather - Luna Heels', 'heels', 'n', '1628858442.jpg', 450000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:40:42', NULL),
-(126, 'Sepatu Wanita Kulit - Gloeshoes Leather - Mary Jane Platform', 'flat', 'n', '1628858499.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:41:39', NULL),
-(127, 'Sepatu Boot Wanita Kulit - Gloeshoes Leather - Ankle Belt', 'wedges', 'n', '1628858561.jpg', 575000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:42:41', NULL),
-(128, 'Sepatu Wanita Kulit - Gloeshoes Leather - Sakura Flat Shoes', 'boots', 'n', '1628858627.jpg', 425000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:43:47', NULL),
-(129, 'Sepatu wanita kulit-Gloeshoes Leather-Mjwoven heels iratan', 'heels', 'n', '1628858688.jpg', 450000, NULL, 'Bisa custom', 'Sedang', 'Sepatu  Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:44:48', NULL),
-(130, 'Sepatu Heels Kulit - Gloeshoes Leather - Black Basic Platform', 'flat', 'n', '1628858764.jpg', 475000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', 1, '2021-08-13 05:46:04', NULL),
-(131, 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', 'wedges', 'n', '1628858811.jpg', 475000, NULL, 'Warna bisa request sendiri', 'Sedang', 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', 1, '2021-08-13 05:46:51', NULL),
-(132, 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot', 'boots', 'n', '1628858871.jpg', 550000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot \r\nSepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-13 05:47:51', NULL),
-(133, 'Sepatu Boot Kulit - Goodshoes Leather - Mila Boot', 'heels', 'n', '1628858924.jpg', 525000, NULL, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', 1, '2021-08-13 05:48:44', NULL),
-(134, 'Sepatu Boot Kulit - Gloeshoes Leather - Kilya Boot', 'flat', 'y', '1628858974.jpg', 500000, 10, 'Warna bisa request sendiri', 'Sedang', 'size 38 \r\nbahan kulit pull up\r\nhak iratan 5cm\r\ngaransi reparasi 1 tahun', 1, '2021-08-13 05:49:34', NULL);
+INSERT INTO `products` (`id`, `product_name`, `product_type`, `featured`, `product_image`, `price`, `discount`, `price_after_discount`, `colour`, `heel_height`, `description`, `no_rekening`, `active`, `created_at`, `updated_at`) VALUES
+(60, 'Sepatu Kulit Wanita Handwoven', 'flat', 'n', '1628231052.jpg', 500000, NULL, 500000, 'warna bisa request sendiri', 'Sedang', 'handwoven flat ( pre order ) \r\n- wajib cantumkan warna dan ukuran\r\n- ukur panjang telapak kaki dengan penggaris\r\n\r\nbahan : kulit asli (mill natural)\r\noutsole : karet\r\nsize : 36-42\r\n\r\nharga 500K\r\n\r\ngaransi reparasi 1 tahun', NULL, 1, '2021-08-05 23:24:12', NULL),
+(61, 'Sepatu Boot Kulit Asli - bannera boot', 'wedges', 'n', '1628231140.jpg', 550000, NULL, 550000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-05 23:25:40', NULL),
+(62, 'Sepatu Boots Kulit - Lodie Boot', 'boots', 'n', '1628231267.jpg', 575000, NULL, 575000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-05 23:27:47', NULL),
+(63, 'Sepatu Kulit Asli - Sling Basic', 'heels', 'n', '1628231376.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-05 23:29:36', NULL),
+(64, 'Sepatu Kulit Asli - Handwoven Hells', 'flat', 'n', '1628231464.jpg', 475000, 8990029, 475000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-05 23:31:04', NULL),
+(65, 'Sepatu Kulit Asli - Ivory Oxford', 'wedges', 'n', '1628231627.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-05 23:33:47', NULL),
+(66, 'Sepatu Kulit Asli - Lesha Heels', 'boots', 'n', '1628318113.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nSize Chart  ( Panjang telapak kaki )\r\n35 : 20cm\r\n36 : 21cm\r\n37 : 22cm\r\n38 : 23cm\r\n39 : 24cm\r\n40 : 25cm\r\n41 : 26cm\r\n42 : 27cm', NULL, 1, '2021-08-06 23:35:13', NULL),
+(67, 'Sepatu Kulit Asli - Mina Heels', 'heels', 'n', '1628318405.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-06 23:40:05', NULL),
+(68, 'Sepatu Boot Kulit Asli - Noemi Boots', 'flat', 'n', '1628318495.jpg', 625000, NULL, 625000, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-06 23:41:35', NULL),
+(69, 'Sepatu Boot Kulit Asli - Mira Boot', 'wedges', 'n', '1628318705.jpg', 525000, NULL, 525000, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-06 23:45:05', NULL),
+(70, 'Sepatu Boot Kulit Asli - Jodie Boots', 'boots', 'n', '1628318851.jpg', 575000, NULL, 575000, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-06 23:47:31', NULL),
+(71, 'Sepatu Kulit Asli - Goodshoes Leather - Teya Dunlup/Wedges', 'heels', 'n', '1628319149.jpg', 450000, NULL, 450000, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-06 23:52:29', NULL),
+(72, 'Sepatu Heels Kulit - Goodshoes Leather - Lula Heels', 'flat', 'n', '1628319725.jpg', 475000, NULL, 475000, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-07 00:02:05', NULL),
+(73, 'Sepatu Heels Kulit - Goodshoes Leather - Lesha Stiletto Heels 9cm', 'wedges', 'n', '1628319828.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-07 00:03:48', NULL),
+(74, 'Sepatu Kulit Wanita - Goodshoes Leather - Dione Wedges', 'boots', 'n', '1628320176.jpg', 450000, NULL, 450000, 'Bisa costum sendiri', 'Sedang', 'Sepatu Kulit Wanita - Goodshoes Leather - Dione Wedges', NULL, 1, '2021-08-07 00:09:36', NULL),
+(75, 'Sepatu Kulit Wanita - Goodshoes Leather - Tzuna Woven', 'heels', 'n', '1628320296.jpg', 575000, NULL, 575000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-07 00:11:36', NULL),
+(76, 'Sepatu Heels Kulit - Gloeshoes Leather - Hana Heel', 'flat', 'n', '1628320444.jpg', 475000, NULL, 475000, 'Bisa costum sediri', 'Rendah', 'sepatu heels kulit asli', NULL, 1, '2021-08-07 00:14:04', NULL),
+(77, 'tali kulit', 'wedges', 'n', '1628320627.jpg', 35000, NULL, 35000, 'tidak ada', 'tidak ada', 'tali kulit asli panjang 70cm', NULL, 1, '2021-08-07 00:17:07', NULL),
+(78, 'Sepatu boot kulit - Goodshoes Leather - Donna Boot 7cm', 'boots', 'n', '1628320696.jpg', 550000, NULL, 550000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-07 00:18:16', NULL),
+(79, 'Sepatu Kulit Wanita - Goodshoes Leather - Tassel flat', 'heels', 'n', '1628320763.jpg', 450000, NULL, 450000, 'Bisa costum', 'Rendah', 'Sepatu Kulit Wanita - Goodshoes Leather - Tassel flat', NULL, 1, '2021-08-07 00:19:23', NULL),
+(80, 'Sepatu Wanita Kulit - Goodshoes Leather - Diona Wooden Wedges', 'flat', 'n', '1628320930.jpg', 475000, NULL, 475000, 'Bisa costum', 'Rendah', 'Sepatu Wanita Kulit - Goodshoes Leather - Diona Wooden Wedges', NULL, 1, '2021-08-07 00:22:10', NULL),
+(81, 'sepatu wanita kulit - Gloeshoes Leather- Docmart Low Wanita', 'wedges', 'n', '1628321095.jpg', 500000, NULL, 500000, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-07 00:24:55', NULL),
+(82, 'Sepatu Wanita Kulit-Gloeshoes Leather-Madoka Woven', 'boots', 'n', '1628321186.jpg', 515000, NULL, 515000, 'Bisa custom', 'Rendah', 'Sepatu  Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-07 00:26:26', NULL),
+(83, 'Sepatu Wanita Kulit-Gloeshoes Leather-Chelsea Boots', 'heels', 'n', '1628321335.jpg', 550000, NULL, 550000, 'Bisa custom', 'Rendah', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:28:55', NULL),
+(84, 'Sepatu Wanita Kulit-Gloeshoes Leather-Ribbon Dunlup', 'flat', 'n', '1628321423.jpg', 425000, NULL, 425000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:30:23', NULL),
+(85, 'Sepatu Heel Kulit - Gloeshoes Leather - Alika Wooden Heels', 'wedges', 'n', '1628321539.jpg', 470050, NULL, 470050, 'Bisa costum', 'Sedang', 'Sepatu Heel Kulit - Gloeshoes Leather - Alika Wooden Heels', NULL, 1, '2021-08-07 00:32:19', NULL),
+(86, 'Mila Boot - Gloeshoee Leather', 'boots', 'n', '1628321630.jpg', 475000, NULL, 475000, 'Bisa costum', 'Rendah', 'Mila Boot - Gloeshoee Leather', NULL, 1, '2021-08-07 00:33:50', NULL),
+(87, 'Sepatu Wanita Kulit - Gloeshoes Leather - Neida Handwoven', 'heels', 'n', '1628321751.jpg', 450000, NULL, 450000, 'Bisa custom', 'Rendah', 'Warna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:35:51', NULL),
+(88, 'Sepatu Boot Kulit - Gloeshoes Leather - Millan Boot', 'flat', 'n', '1628321924.jpg', 450000, NULL, 450000, 'Bisa costum', 'Rendah', 'Sepatu Boot Kulit - Gloeshoes Leather - Millan Boot', NULL, 1, '2021-08-07 00:38:44', NULL),
+(89, 'Sepatu Boot Kulit - Gloeshoes Leather - Alica Boot', 'wedges', 'n', '1628322011.jpg', 600000, NULL, 600000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:40:11', NULL),
+(90, 'Sepatu Heels Kulit Wanita - Gloeshoes Leather - Sling Basic Sandals', 'boots', 'n', '1628322115.jpg', 425000, NULL, 425000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:41:55', NULL),
+(91, 'Sepatu Heels Kulit Wanita - Gloeshoes Leather - Lesha Heels Platform', 'heels', 'n', '1628322323.jpg', 450000, NULL, 450000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:45:23', NULL),
+(92, 'Sepatu Kulit Wanita - Gloeshoes Leather - Oxford tree Colour', 'flat', 'n', '1628322539.jpg', 450000, NULL, 450000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:48:59', NULL),
+(93, 'Sepatu Boots Kulit Wanita - Gloeshoes Leather - High Boots', 'wedges', 'n', '1628322657.jpg', 875000, NULL, 875000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:50:57', NULL),
+(94, 'Sepatu Heels Kulit Wanita - Gloeshoes Leather - Luna Heels', 'boots', 'n', '1628322752.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:52:32', NULL),
+(95, 'Sepatu Kulit Wanita - Gloeshoes Leather - Lula Platform', 'heels', 'n', '1628322870.jpg', 475000, NULL, 475000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 00:54:30', NULL),
+(96, 'Sepatu Boots Kulit Wanita - Gloeshoes Leather - Donna Boots', 'flat', 'n', '1628323986.jpg', 550000, NULL, 550000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 01:13:06', NULL),
+(97, 'Sepatu Kulit Wanita - Gloeshoes Leather - Belt Mules Platform', 'wedges', 'n', '1628324803.jpg', 500000, NULL, 500000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-07 01:26:43', NULL),
+(104, 'Sepatu Wanita Kulit - Gloeshoes Leather - Loodie Heels Boots', 'boots', 'n', '1628849308.jpg', 550000, NULL, 550000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 03:08:28', NULL),
+(105, 'Sepatu Kulit Wanita - Gloeshoes Leather - Nuela Mules', 'heels', 'n', '1628857074.jpg', 475000, NULL, 475000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:17:54', NULL),
+(106, 'Sepatu Kulit Wanita - Gloeshoes Leather - Alesta Heels', 'flat', 'n', '1628857136.jpg', 475000, NULL, 475000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:18:56', NULL),
+(107, 'Sepatu Kulit Wanita - Gloeshoes Leather - Tassel Shoes', 'wedges', 'n', '1628857204.jpg', 395000, NULL, 395000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:20:04', NULL),
+(108, 'Sepatu Wanita Kulit - Gloeshoes Leather - Lula Woden Heels', 'boots', 'n', '1628857255.jpg', 475000, NULL, 475000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:20:55', NULL),
+(109, 'Sepatu Wanita Kulit - Gloeshoes Leather - Lova Oxford', 'heels', 'n', '1628857331.jpg', 475000, NULL, 475000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:22:11', NULL),
+(110, 'Sepatu Wanita Kulit - Gloedshoes Leather - Black Handwoven', 'flat', 'n', '1628857400.jpg', 575000, NULL, 575000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:23:20', NULL),
+(111, 'Sepatu Wanita Kulit - Gloeshoes Leather - Belt Moules Dunlup', 'wedges', 'n', '1628857457.jpg', 425000, NULL, 425000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:24:17', NULL),
+(112, 'Sepatu Wanita Kulit - Gloeshoes Leather - Nami Heels Boots', 'boots', 'n', '1628857520.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 0, '2021-08-13 05:25:20', NULL),
+(113, 'Sepatu Wanita Kulit - Gloeshoes Leather - Mimi Colour', 'heels', 'n', '1628857594.jpg', 350000, NULL, 350000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 0, '2021-08-13 05:26:34', NULL),
+(114, 'Sepatu Wanita Kulit - Gloeshoes Leather - Alana Shoes', 'flat', 'n', '1628857661.jpg', 500000, NULL, 500000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 0, '2021-08-13 05:27:41', NULL),
+(115, 'Sepatu Wanita Kulit - Gloeshoes Leather - Sabrina Heels', 'wedges', 'n', '1628857728.jpg', 575000, NULL, 575000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 0, '2021-08-13 05:28:48', NULL),
+(116, 'Sepatu Wanita Kulit - Gloeshoes Leather - Kay Shoes', 'boots', 'n', '1628857792.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 0, '2021-08-13 05:29:52', NULL),
+(117, 'Sepatu Wanita Kulit - Gloeshoes Leather - Nivia Platsform', 'heels', 'n', '1628857849.jpg', 500000, NULL, 500000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 0, '2021-08-13 05:30:49', NULL),
+(118, 'Sepatu Wanita Kulit - Gloeshoes Leather - Milano Woven', 'flat', 'n', '1628857935.jpg', 500000, NULL, 500000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:32:15', NULL),
+(119, 'Sepatu Wanita Kulit - Gloeshoes Leather - Hana Heels', 'wedges', 'n', '1628858054.jpg', 450000, NULL, 450000, 'Bisa custom', 'Rendah', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:34:14', NULL),
+(120, 'Sepatu Wanita Kulit-Gloeshoes Leather-Mila boot in black', 'boots', 'n', '1628858133.jpg', 525000, NULL, 525000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:35:33', NULL),
+(121, 'Sepatu Kulit Gloeshoes Leather - Luna Heels', 'heels', 'n', '1628858181.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol      : Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-13 05:36:21', NULL),
+(122, 'Sepatu Heels Kulit - Gloeshoes Leather - Madoka Heels', 'flat', 'n', '1628858248.jpg', 515000, NULL, 515000, 'Warna bisa request sendiri', 'Sedang', 'Sepatu Heels Kulit - Gloeshoes Leather - Madoka Heels', NULL, 1, '2021-08-13 05:37:28', NULL),
+(123, 'Sepatu Kulit Wanita - Gloeshoes Leather - Mira Oxford', 'wedges', 'n', '1628858301.jpg', 450000, NULL, 450000, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-13 05:38:21', NULL),
+(124, 'Pelunasan pesanan sepatu boot a.n Shaviera', 'boots', 'n', '1628858374.jpg', 275000, NULL, 275000, 'Warna bisa request sendiri', 'Sedang', 'Pelunasan pesanan sepatu boot a.n Shaviera', NULL, 1, '2021-08-13 05:39:34', NULL),
+(125, 'Sepatu Wanita Kulit - Gloeshoes Leather - Luna Heels', 'heels', 'n', '1628858442.jpg', 450000, NULL, 450000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:40:42', NULL),
+(126, 'Sepatu Wanita Kulit - Gloeshoes Leather - Mary Jane Platform', 'flat', 'n', '1628858499.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:41:39', NULL),
+(127, 'Sepatu Boot Wanita Kulit - Gloeshoes Leather - Ankle Belt', 'wedges', 'n', '1628858561.jpg', 575000, NULL, 575000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:42:41', NULL),
+(128, 'Sepatu Wanita Kulit - Gloeshoes Leather - Sakura Flat Shoes', 'boots', 'n', '1628858627.jpg', 425000, NULL, 425000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:43:47', NULL),
+(129, 'Sepatu wanita kulit-Gloeshoes Leather-Mjwoven heels iratan', 'heels', 'n', '1628858688.jpg', 450000, NULL, 450000, 'Bisa custom', 'Sedang', 'Sepatu  Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:44:48', NULL),
+(130, 'Sepatu Heels Kulit - Gloeshoes Leather - Black Basic Platform', 'flat', 'n', '1628858764.jpg', 475000, NULL, 475000, 'Bisa custom', 'Sedang', 'Sepatu Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun\r\n\r\nUntuk info size bisa chat dulu sebelum chek out', NULL, 1, '2021-08-13 05:46:04', NULL),
+(131, 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', 'wedges', 'n', '1628858811.jpg', 475000, NULL, 475000, 'Warna bisa request sendiri', 'Sedang', 'Sepatu Heel Kulit - Gloeshoes Leather - Mary Jane Platform', NULL, 1, '2021-08-13 05:46:51', NULL),
+(132, 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot', 'boots', 'n', '1628858871.jpg', 550000, NULL, 550000, 'Bisa custom', 'Sedang', 'Sepatu Boot Kulit - Gloeshoes Leather - Kirana Boot \r\nSepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', NULL, 1, '2021-08-13 05:47:51', NULL),
+(133, 'Sepatu Boot Kulit - Goodshoes Leather - Mila Boot', 'heels', 'n', '1628858924.jpg', 525000, 25, 393750, 'Bisa custom', 'Sedang', 'Sepatu Boots Wanita Dari Kulit Asli \r\nWarna : Bisa custom\r\nSize: 35-43\r\nBahan : Kulit Sapi\r\nSol Karet \r\nGaransi Reparasi 1 tahun', '0989829', 1, '2021-08-13 05:48:44', NULL),
+(134, 'Sepatu Boot Kulit - Gloeshoes Leather - Kilya Boot', 'flat', 'y', '1628858974.jpg', 500000, 15, 425000, 'Warna bisa request sendiri', 'Sedang', 'size 38 \r\nbahan kulit pull up\r\nhak iratan 5cm\r\ngaransi reparasi 1 tahun', '0989829', 1, '2021-08-13 05:49:34', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `products123`
+-- Table structure for table `products123`
 --
 
 CREATE TABLE `products123` (
@@ -488,7 +504,7 @@ CREATE TABLE `products123` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `products123`
+-- Dumping data for table `products123`
 --
 
 INSERT INTO `products123` (`id`, `product_name`, `product_type`, `featured`, `product_image`, `price`, `colour`, `heel_height`, `description`, `created_at`, `updated_at`) VALUES
@@ -566,7 +582,7 @@ INSERT INTO `products123` (`id`, `product_name`, `product_type`, `featured`, `pr
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sizecartinfos`
+-- Table structure for table `sizecartinfos`
 --
 
 CREATE TABLE `sizecartinfos` (
@@ -577,7 +593,7 @@ CREATE TABLE `sizecartinfos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `sizecartinfos`
+-- Dumping data for table `sizecartinfos`
 --
 
 INSERT INTO `sizecartinfos` (`id`, `image`, `created_at`, `updated_at`) VALUES
@@ -586,7 +602,7 @@ INSERT INTO `sizecartinfos` (`id`, `image`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sizecarts`
+-- Table structure for table `sizecarts`
 --
 
 CREATE TABLE `sizecarts` (
@@ -599,7 +615,7 @@ CREATE TABLE `sizecarts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `sizecarts`
+-- Dumping data for table `sizecarts`
 --
 
 INSERT INTO `sizecarts` (`id`, `size`, `foot_length`, `active`, `created_at`, `updated_at`) VALUES
@@ -615,7 +631,7 @@ INSERT INTO `sizecarts` (`id`, `size`, `foot_length`, `active`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_post`
+-- Table structure for table `tb_post`
 --
 
 CREATE TABLE `tb_post` (
@@ -628,7 +644,7 @@ CREATE TABLE `tb_post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_post`
+-- Dumping data for table `tb_post`
 --
 
 INSERT INTO `tb_post` (`post_id`, `post_title`, `image`, `content`, `created_at`, `updated_at`) VALUES
@@ -640,7 +656,7 @@ INSERT INTO `tb_post` (`post_id`, `post_title`, `image`, `content`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -648,236 +664,245 @@ CREATE TABLE `users` (
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `level` int(11) NOT NULL DEFAULT 2 COMMENT '[1 : ''Admin'', 2 : ''Customer'']',
+  `status` int(11) NOT NULL DEFAULT 0 COMMENT '[0 : ''Tidak bisa login'', 1 : ''Bisa Login'']',
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nama`, `email`, `phone`, `password`) VALUES
-(5, 'Weargloeshoes Admin', 'admin@weargloeshoes', '080808080808', '$2y$10$3uAXfzDXqVn5auo6yFA2IOR4FU5kCNRk.dZRn9WWC.NlYt5SkwO1G');
+INSERT INTO `users` (`id`, `nama`, `email`, `phone`, `password`, `level`, `status`, `token`, `created_at`, `updated_at`) VALUES
+(5, 'Weargloeshoes Admin', 'gloeshoesleather@gmail.com', '080808080808', '$2y$10$3uAXfzDXqVn5auo6yFA2IOR4FU5kCNRk.dZRn9WWC.NlYt5SkwO1G', 1, 1, '$2y$10$D0FhAFRND2a6sUMpOQqswuyYmsYCIE3OT8kRhzFqw7wYBtnBSC6SK', '2022-02-07 18:39:31', '2022-03-08 09:04:58'),
+(27, 'Antonius Eko Putranto', 'antokototran78@gmail.com', '082131163139', '$2y$10$x.4k5Wpn9TVLyjv/aLBuc.ovyaEByXaFnisiqj.RXOKkEJswkKJDS', 2, 1, NULL, '2022-02-16 02:19:09', '2022-02-16 02:19:38'),
+(28, 'erick steaven', 'steaven825@gmail.com', '082233119501', '$2y$10$1ucqYyOCK8jss18Dg3fEF.N7RZpapcaRzypJUbxbc0iYPPHEgJ/Yy', 2, 1, '$2y$10$xFcrgXyvXWDLdZbCGPBxDOTQBhyvRCaWl6bcIthUlQhiCIVyskYQW', '2022-03-07 12:21:47', '2022-03-07 13:10:15'),
+(29, 'Queena', 'Yabellanamaku@gmail.com', '08567775815', '$2y$10$1KOu7U1K.bv02h7VO.Z0e.fpBniYlObtgJdi1lwjriCihLXeaG5Da', 2, 0, NULL, '2022-03-07 12:34:49', '2022-03-07 12:34:49'),
+(30, 'customer1', 'coba@gmail.com', '99999', '$2y$10$11jXZqdg1YnY/QdYDOd9o.TvLNFjWc975oicbHzNHpnfsq6VOJJDu', 2, 1, '8d9e00996faf5ae641a042b734dea108', '2022-03-08 06:38:51', '2022-03-11 17:23:40');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `accounts`
+-- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `articles`
+-- Indexes for table `articles`
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `customerservices`
+-- Indexes for table `customerservices`
 --
 ALTER TABLE `customerservices`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `customnotes`
+-- Indexes for table `customnotes`
 --
 ALTER TABLE `customnotes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `customtestimonies`
+-- Indexes for table `customtestimonies`
 --
 ALTER TABLE `customtestimonies`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `events`
+-- Indexes for table `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `feeds`
+-- Indexes for table `feeds`
 --
 ALTER TABLE `feeds`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `imageproducts`
+-- Indexes for table `imageproducts`
 --
 ALTER TABLE `imageproducts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `productcolourimages`
+-- Indexes for table `productcolourimages`
 --
 ALTER TABLE `productcolourimages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `productcolourimages_product_id_foreign` (`product_id`);
 
 --
--- Indeks untuk tabel `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `products123`
+-- Indexes for table `products123`
 --
 ALTER TABLE `products123`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sizecartinfos`
+-- Indexes for table `sizecartinfos`
 --
 ALTER TABLE `sizecartinfos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sizecarts`
+-- Indexes for table `sizecarts`
 --
 ALTER TABLE `sizecarts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tb_post`
+-- Indexes for table `tb_post`
 --
 ALTER TABLE `tb_post`
   ADD PRIMARY KEY (`post_id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `accounts`
+-- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `articles`
+-- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `customerservices`
+-- AUTO_INCREMENT for table `customerservices`
 --
 ALTER TABLE `customerservices`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `customnotes`
+-- AUTO_INCREMENT for table `customnotes`
 --
 ALTER TABLE `customnotes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `customtestimonies`
+-- AUTO_INCREMENT for table `customtestimonies`
 --
 ALTER TABLE `customtestimonies`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `events`
+-- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `feeds`
+-- AUTO_INCREMENT for table `feeds`
 --
 ALTER TABLE `feeds`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `imageproducts`
+-- AUTO_INCREMENT for table `imageproducts`
 --
 ALTER TABLE `imageproducts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT untuk tabel `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `productcolourimages`
+-- AUTO_INCREMENT for table `productcolourimages`
 --
 ALTER TABLE `productcolourimages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
--- AUTO_INCREMENT untuk tabel `products123`
+-- AUTO_INCREMENT for table `products123`
 --
 ALTER TABLE `products123`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
--- AUTO_INCREMENT untuk tabel `sizecartinfos`
+-- AUTO_INCREMENT for table `sizecartinfos`
 --
 ALTER TABLE `sizecartinfos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `sizecarts`
+-- AUTO_INCREMENT for table `sizecarts`
 --
 ALTER TABLE `sizecarts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_post`
+-- AUTO_INCREMENT for table `tb_post`
 --
 ALTER TABLE `tb_post`
   MODIFY `post_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `productcolourimages`
+-- Constraints for table `productcolourimages`
 --
 ALTER TABLE `productcolourimages`
   ADD CONSTRAINT `productcolourimages_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
